@@ -11,7 +11,7 @@ function App() {
       setEntries(blogEntries);
       console.log(entries)
     })
-  }, [])
+  }, [entries])
 
   return (
     <div className="App">
@@ -19,7 +19,7 @@ function App() {
         <>
           <h1>{entry.title}</h1>
           <p>{entry.blog_text}</p>
-          <img src={entry.place_img} height="500px" width="auto" />
+          <img src={entry.place_img} height="500px" width="auto" alt={`${entries.title}`}/>
         </>
       ))}
     </div>
