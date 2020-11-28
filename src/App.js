@@ -1,23 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import "./App.css";
+import axios from "axios";
 
 function App() {
+  const [entries, setEntries] = useState(null);
+
+  useEffect(() => {
+    axios.get('https://travel-blogs-api.herokuapp.com/blogs/').then(res => {
+      const blogEntries = res.data;
+      setEntries(blogEntries);
+      console.log(entries)
+    })
+  }, [])
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {entries && entries.map((entry) => (
+        <>
+          <h1>{entry.title}</h1>
+          <p>{entry.blog_text}</p>
+          <img src={entry.place_img} height="500px" width="auto" />
+        </>
+      ))}
     </div>
   );
 }
