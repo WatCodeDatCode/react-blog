@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import axios from "axios";
+import moment from "moment";
 
 function App() {
   const [entries, setEntries] = useState(null);
@@ -18,8 +19,9 @@ function App() {
       {entries && entries.map((entry) => (
         <>
           <h1>{entry.title}</h1>
+          <p>{moment(entry.date_visited).format('MMMM Do YYYY')}</p>
           <p>{entry.blog_text}</p>
-          <img src={entry.place_img} height="500px" width="auto" alt={`${entries.title}`}/>
+          <img src={entry.place_img} height="500px" width="auto" alt={`${entry.title}`}/>
         </>
       ))}
     </div>
