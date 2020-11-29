@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import "./App.css";
 import axios from "axios";
 import moment from "moment";
 
@@ -15,7 +14,7 @@ function App() {
   }, [entries])
 
   return (
-    <div className="App">
+    <div className="bg-black text-white">
       {entries && entries.map((entry) => (
         <>
           <h1>{entry.title}</h1>
