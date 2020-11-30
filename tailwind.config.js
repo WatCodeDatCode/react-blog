@@ -29,6 +29,17 @@ module.exports = {
       indigo: colors.indigo,
       purple: colors.violet,
       pink: colors.pink,
+      secondary: {
+          100: "#f8e2d9",
+          200: "#f1c5b3",
+          300: "#eba88e",
+          400: "#e48b68",
+          500: "#dd6e42",
+          600: "#b15835",
+          700: "#854228",
+          800: "#582c1a",
+          900: "#2c160d"
+},
     },
     spacing: {
       px: '1px',
@@ -192,6 +203,7 @@ module.exports = {
         '"Courier New"',
         'monospace',
       ],
+      nationalPark: ['nationalPark']
     },
     fontSize: {
       xs: ['0.75rem', { lineHeight: '1rem' }],
