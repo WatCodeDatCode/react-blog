@@ -1,4 +1,5 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 
 const Navbar = () => {
     return (
@@ -13,26 +14,30 @@ const Navbar = () => {
                                 alt="Gullible's Travels Logo"
                             />
                         </div>
-                        <div className="hidden sm:block sm:ml-6">
+                        <div className="sm:block sm:ml-6">
                             <div className="flex space-x-4">
-                                <a
-                                    href="/"
-                                    className="px-3 py-2 rounded-md text-sm font-medium text-white bg-gray-900"
+                                <NavLink
+                                    to="/"
+                                    className="nav-inactive"
+                                    activeClassName="nav-active"
+                                    exact={true}
                                 >
                                     Home
-                                </a>
-                                <a
-                                    href="/blog"
-                                    className="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-700"
+                                </NavLink>
+                                <NavLink
+                                    to="/blog"
+                                    className="nav-inactive"
+                                    activeClassName="nav-active"
                                 >
                                     Blog
-                                </a>
-                                <a
-                                    href="/contact"
-                                    className="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-700"
+                                </NavLink>
+                                <NavLink
+                                    to="/contact"
+                                    className="nav-inactive"
+                                    activeClassName="nav-active"
                                 >
                                     Contact
-                                </a>
+                                </NavLink>
                             </div>
                         </div>
                     </div>

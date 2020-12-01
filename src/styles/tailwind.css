@@ -1,10 +1,18 @@
 @font-face {
-  font-family: nationalPark;
-  src: url('../font/NationalPark-Regular.otf');
+    font-family: nationalPark;
+    src: url('../font/NationalPark-Regular.otf');
 }
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.nav-active {
+    @apply px-3 py-2 rounded-md text-sm font-medium text-white bg-gray-900;
+}
+
+.nav-inactive {
+    @apply px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-700;
+}
 
 .App {
     text-align: center;
@@ -16,20 +24,19 @@
     justify-content: center;
     font-size: calc(10px + 2vmin);
     color: white;
-  }
-  
-  @media (prefers-reduced-motion: no-preference) {
+}
+
+@media (prefers-reduced-motion: no-preference) {
     .App-logo {
-      animation: App-logo-spin infinite 20s linear;
+        animation: App-logo-spin infinite 20s linear;
     }
-  }
-  
-  @keyframes App-logo-spin {
+}
+
+@keyframes App-logo-spin {
     from {
-      transform: rotate(0deg);
+        transform: rotate(0deg);
     }
     to {
-      transform: rotate(360deg);
+        transform: rotate(360deg);
     }
-  }
-  
+}
