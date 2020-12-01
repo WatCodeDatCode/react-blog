@@ -205,7 +205,9 @@ select { /* 1 */
 Correct the inability to style clickable types in iOS and Safari.
 */
 
-button {
+button,
+[type='button'],
+[type='submit'] {
   -webkit-appearance: button;
 }
 
@@ -568,6 +570,14 @@ video {
   display: table;
 }
 
+.flex-col {
+  flex-direction: column;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
 .items-center {
   align-items: center;
 }
@@ -600,6 +610,10 @@ video {
   height: 2rem;
 }
 
+.h-12 {
+  height: 3rem;
+}
+
 .h-16 {
   height: 4rem;
 }
@@ -609,9 +623,33 @@ video {
   line-height: 2.5rem;
 }
 
+.text-6xl {
+  font-size: 3.75rem;
+  line-height: 1;
+}
+
+.my-2 {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.mx-6 {
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+}
+
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
+}
+
+.-mx-3 {
+  margin-left: -0.75rem;
+  margin-right: -0.75rem;
+}
+
+.mb-6 {
+  margin-bottom: 1.5rem;
 }
 
 .max-w-7xl {
@@ -627,9 +665,18 @@ video {
   padding: 0.25rem;
 }
 
-.px-2 {
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
+.px-3 {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+
+.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.pt-2 {
+  padding-top: 0.5rem;
 }
 
 .pr-2 {
@@ -685,6 +732,10 @@ video {
   --tw-ring-color: rgba(255, 255, 255, var(--tw-ring-opacity));
 }
 
+.text-center {
+  text-align: center;
+}
+
 .text-white {
   --tw-text-opacity: 1;
   color: rgba(255, 255, 255, var(--tw-text-opacity));
@@ -693,6 +744,11 @@ video {
 .text-gray-400 {
   --tw-text-opacity: 1;
   color: rgba(156, 163, 175, var(--tw-text-opacity));
+}
+
+.text-secondary-500 {
+  --tw-text-opacity: 1;
+  color: rgba(221, 110, 66, var(--tw-text-opacity));
 }
 
 .hover\:text-white:hover {
@@ -706,6 +762,10 @@ video {
 
 .w-auto {
   width: auto;
+}
+
+.w-full {
+  width: 100%;
 }
 
 @keyframes spin {
@@ -789,20 +849,72 @@ video {
   color: white;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.submit-button {
+  --tw-bg-opacity: 1;
+  background-color: rgba(221, 110, 66, var(--tw-bg-opacity));
+}
+
+.submit-button:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgba(133, 66, 40, var(--tw-bg-opacity));
+}
+
+.submit-button {
+  border-radius: 9999px;
+  cursor: pointer;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  --tw-text-opacity: 1;
+  color: rgba(255, 255, 255, var(--tw-text-opacity));
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  width: 100%;
+}
+
+@media (min-width: 640px) {
+  .submit-button {
+    width: 50%;
   }
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media (min-width: 768px) {
+  .submit-button {
+    width: 33.333333%;
   }
+}
 
-  to {
-    transform: rotate(360deg);
-  }
+.form-label {
+  display: block;
+  font-weight: 700;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  margin-bottom: 0.5rem;
+  --tw-text-opacity: 1;
+  color: rgba(0, 0, 0, var(--tw-text-opacity));
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+}
+
+.form-input {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  --tw-bg-opacity: 1;
+  background-color: rgba(243, 244, 246, var(--tw-bg-opacity));
+  border-radius: 0.25rem;
+  border-width: 1px;
+  display: block;
+  line-height: 1.25;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-right: 2rem;
+  --tw-text-opacity: 1;
+  color: rgba(0, 0, 0, var(--tw-text-opacity));
+  width: 100%;
 }
 
 @media (min-width: 640px) {
@@ -816,6 +928,11 @@ video {
 
   .sm\:justify-start {
     justify-content: flex-start;
+  }
+
+  .sm\:my-6 {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
   }
 
   .sm\:ml-6 {
@@ -841,12 +958,23 @@ video {
     bottom: auto;
     left: auto;
   }
+
+  .sm\:w-1\/2 {
+    width: 50%;
+  }
 }
 
 @media (min-width: 768px) {
+  .md\:mb-0 {
+    margin-bottom: 0px;
+  }
 }
 
 @media (min-width: 1024px) {
+  .lg\:h-auto {
+    height: auto;
+  }
+
   .lg\:px-8 {
     padding-left: 2rem;
     padding-right: 2rem;
@@ -858,3 +986,11 @@ video {
 
 @media (min-width: 1536px) {
 }
+
+
+
+
+
+
+
+

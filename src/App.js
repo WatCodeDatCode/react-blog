@@ -4,6 +4,7 @@ import Navbar from './components/Navbar'
 import Blogs from './pages/Blogs'
 import Blog from './pages/Blog'
 import Contact from './pages/Contact'
+import NewBlog from './pages/NewBlog'
 
 function App() {
 
@@ -12,10 +13,11 @@ function App() {
             <Router>
                 <Navbar />
                 <Switch>
-                    <Route exact path='/' />
-                    <Route exact path='/blog' component={Blogs} />
-                    <Route exact path='/blog/:id' component={Blog} />
-                    <Route exact path='/contact' component={Contact} />
+                    <Route path='/' exact={true} />
+                    <Route path='/blog' component={Blogs} />
+                    <Route path='/blog/:id' component={Blog} />
+                    <Route path='/contact' component={Contact} />
+                    <Route path='/new' component={NewBlog} />
                 </Switch>
             </Router>
         </>
