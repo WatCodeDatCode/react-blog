@@ -58,14 +58,12 @@ const NewBlog = () => {
         setBlogText(value)
     }
 
-    async function handleSubmit(event) {
+    const handleSubmit = async (event) => {
         event.preventDefault()
 
         await Geocode.fromAddress(`${city},${country}`).then(
             (response) => {
-                console.log(response.results[0].geometry.location)
                 const { lat, lng } = response.results[0].geometry.location
-                console.log(lat, lng)
                 setLat(lat)
                 setLng(lng)
             },
@@ -94,8 +92,6 @@ const NewBlog = () => {
             .catch((err) => console.error(err))
     }
 
-    // TODO: Fetch Geocode data htmlFor lng & lat based on city and country from form on submit, then add this data to post request
-
     return (
         <div className="w-full sm:w-1/2 flex flex-col mx-auto">
             <h2 className="text-center text-6xl text-secondary-500 my-2 sm:my-6">
@@ -109,8 +105,8 @@ const NewBlog = () => {
                         </label>
                         <input
                             type="text"
-                            autocomplete="on"
                             className="form-input"
+                            value={city}
                             onChange={changeCity}
                             required
                         />
@@ -120,8 +116,8 @@ const NewBlog = () => {
                             Country:
                         </label>
                         <select
-                            autocomplete="on"
                             className="form-input"
+                            value={country}
                             onChange={changeCountry}
                             required
                         >
@@ -437,8 +433,8 @@ const NewBlog = () => {
                         <input
                             type="date"
                             id="date-visited-input"
-                            autocomplete="on"
                             className="form-input"
+                            value={dateVisited}
                             onChange={changeDateVisited}
                             required
                         />
@@ -451,6 +447,7 @@ const NewBlog = () => {
                             type="text"
                             id="place-img-input"
                             className="form-input"
+                            value={placeImg}
                             onChange={changePlaceImg}
                             required
                         />
@@ -466,6 +463,7 @@ const NewBlog = () => {
                             type="text"
                             id="author-input"
                             className="form-input"
+                            value={author}
                             onChange={changeAuthor}
                             required
                         />
@@ -481,6 +479,7 @@ const NewBlog = () => {
                             type="text"
                             id="author-img-input"
                             className="form-input"
+                            value={authorImg}
                             onChange={changeAuthorImg}
                             required
                         />
@@ -499,6 +498,7 @@ const NewBlog = () => {
                             type="text"
                             id="blog-title-input"
                             className="h-12 lg:h-auto form-input"
+                            value={title}
                             onChange={changeTitle}
                             required
                         />
@@ -513,6 +513,7 @@ const NewBlog = () => {
                         <textarea
                             id="blog-text-input"
                             className="h-12 lg:h-auto form-input"
+                            value={blogText}
                             onChange={changeBlogText}
                             required
                         ></textarea>

@@ -839,8 +839,9 @@ video {
 
 .App {
   text-align: center;
-  background-color: #282c34;
   min-height: 100vh;
+  min-width: 100vw;
+  background-color: #282c34;
   display: flex;
   flex-direction: column;
   align-items: center;
