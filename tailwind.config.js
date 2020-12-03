@@ -29,6 +29,17 @@ module.exports = {
       indigo: colors.indigo,
       purple: colors.violet,
       pink: colors.pink,
+      dark: {
+          100: "#d4d5d6",
+          200: "#a9abae",
+          300: "#7e8085",
+          400: "#53565d",
+          500: "#282c34",
+          600: "#20232a",
+          700: "#181a1f",
+          800: "#101215",
+          900: "#08090a"
+},
       secondary: {
           100: "#f8e2d9",
           200: "#f1c5b3",

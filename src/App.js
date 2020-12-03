@@ -9,7 +9,7 @@ import NewBlog from './pages/NewBlog'
 function App() {
 
     return (
-        <>
+        <div className="App">
             <Router>
                 <Navbar />
                 <Switch>
@@ -20,7 +20,7 @@ function App() {
                     <Route path='/contact' component={Contact} exact={true} />
                 </Switch>
             </Router>
-        </>
+        </div>
     )
 }
 

@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import axios from 'axios'
 import moment from 'moment'
 import { useParams } from 'react-router'
+import LoadingSpinner from '../components/LoadingSpinner'
 
 const Blog = () => {
     const [entry, setEntry] = useState({})
@@ -28,10 +29,10 @@ const Blog = () => {
     }, [id])
 
     return (
-        <div className="bg-black text-white">
+        <div className="bg-dark-500 text-white">
             {loading || error ? (
                 loading ? (
-                    <div className="loader"></div>
+                    <LoadingSpinner />
                 ) : (
                     <div>Error!</div>
                 )

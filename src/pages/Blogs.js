@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 import moment from 'moment'
+import LoadingSpinner from '../components/LoadingSpinner'
 
 const Blogs = () => {
     const [entries, setEntries] = useState([])
@@ -28,10 +29,10 @@ const Blogs = () => {
     console.log(entries)
 
     return (
-        <div className="bg-black text-white">
+        <div className="bg-dark-500 text-white">
             {loading || error ? (
                 loading ? (
-                    <div className="loader"></div>
+                    <LoadingSpinner />
                 ) : (
                     <div>Error!</div>
                 )

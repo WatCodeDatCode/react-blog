@@ -539,14 +539,14 @@ video {
   border-width: 0;
 }
 
-.bg-black {
-  --tw-bg-opacity: 1;
-  background-color: rgba(0, 0, 0, var(--tw-bg-opacity));
-}
-
 .bg-gray-800 {
   --tw-bg-opacity: 1;
   background-color: rgba(31, 41, 55, var(--tw-bg-opacity));
+}
+
+.bg-dark-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgba(40, 44, 52, var(--tw-bg-opacity));
 }
 
 .bg-secondary-500 {
@@ -616,6 +616,10 @@ video {
 
 .h-16 {
   height: 4rem;
+}
+
+.h-screen {
+  height: 100vh;
 }
 
 .text-4xl {
@@ -838,15 +842,9 @@ video {
 }
 
 .App {
-  text-align: center;
   min-height: 100vh;
   min-width: 100vw;
   background-color: #282c34;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
   color: white;
 }
 
