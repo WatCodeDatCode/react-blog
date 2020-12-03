@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
-import moment from 'moment'
+import BlogCard from '../components/BlogCard'
 import LoadingSpinner from '../components/LoadingSpinner'
 
 const Blogs = () => {
@@ -38,21 +38,7 @@ const Blogs = () => {
                 )
             ) : (
                 entries &&
-                entries.map((entry) => (
-                    <>
-                        <h1>{entry.title}</h1>
-                        <p>
-                            {moment(entry.date_visited).format('MMMM Do YYYY')}
-                        </p>
-                        <p>{entry.blog_text}</p>
-                        <img
-                            src={entry.place_img}
-                            width="500px"
-                            height="auto"
-                            alt={`${entry.title}`}
-                        />
-                    </>
-                ))
+                entries.map((entry) => <BlogCard entry={entry} />)
             )}
         </div>
     )

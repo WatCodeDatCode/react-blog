@@ -467,7 +467,7 @@ const NewBlog = () => {
                                         United Arab Emirates
                                     </option>
                                     <option value="GB">United Kingdom</option>
-                                    <option value="US">USA</option>
+                                    <option value="USA">USA</option>
                                     <option value="UM">
                                         United States Minor Outlying Islands
                                     </option>

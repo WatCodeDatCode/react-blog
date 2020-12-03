@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
-import moment from 'moment'
 import { useParams } from 'react-router'
+import BlogEntry from '../components/BlogEntry'
 import LoadingSpinner from '../components/LoadingSpinner'
 
 const Blog = () => {
@@ -37,17 +37,7 @@ const Blog = () => {
                     <div>Error!</div>
                 )
             ) : (
-                <>
-                    <h1>{entry.title}</h1>
-                    <p>{moment(entry.date_visited).format('MMMM Do YYYY')}</p>
-                    <p>{entry.blog_text}</p>
-                    <img
-                        src={entry.place_img}
-                        height="500px"
-                        width="auto"
-                        alt={`${entry.title}`}
-                    />
-                </>
+                <BlogEntry entry={entry} />
             )}
         </div>
     )
