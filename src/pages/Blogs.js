@@ -3,23 +3,40 @@ import axios from 'axios'
 import moment from 'moment'
 
 const Blogs = () => {
-    const [entries, setEntries] = useState(null)
+    const [entries, setEntries] = useState([])
+    const [loading, setLoading] = useState(false)
+    const [error, setError] = useState(null)
+
+    const fetchEntries = async () => {
+        try {
+            setLoading(true)
+            setError(null)
+            const response = await axios(
+                `https://travel-blogs-api.herokuapp.com/blogs/`
+            )
+            setEntries(response.data)
+        } catch (err) {
+            setError(err)
+        }
+        setLoading(false)
+    }
 
     useEffect(() => {
-        async function getData() {
-            await axios
-                .get('https://travel-blogs-api.herokuapp.com/blogs/')
-                .then((res) => {
-                    const blogEntries = res.data
-                    setEntries(blogEntries)
-                })
-        }
-        getData()
-    }, [entries])
+        fetchEntries()
+    }, [])
+
+    console.log(entries)
 
     return (
         <div className="bg-black text-white">
-            {entries &&
+            {loading || error ? (
+                loading ? (
+                    <div className="loader"></div>
+                ) : (
+                    <div>Error!</div>
+                )
+            ) : (
+                entries &&
                 entries.map((entry) => (
                     <>
                         <h1>{entry.title}</h1>
@@ -34,7 +51,8 @@ const Blogs = () => {
                             alt={`${entry.title}`}
                         />
                     </>
-                ))}
+                ))
+            )}
         </div>
     )
 }

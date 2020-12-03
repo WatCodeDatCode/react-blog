@@ -14,10 +14,10 @@ function App() {
                 <Navbar />
                 <Switch>
                     <Route path='/' exact={true} />
-                    <Route path='/blog' component={Blogs} />
-                    <Route path='/blog/:id' component={Blog} />
-                    <Route path='/contact' component={Contact} />
-                    <Route path='/new' component={NewBlog} />
+                    <Route path='/blog' component={Blogs} exact={true} />
+                    <Route path='/blog/:id' component={Blog} exact={true} />
+                    <Route path='/contact' component={Contact} exact={true} />
+                    <Route path='/new' component={NewBlog} exact={true} />
                 </Switch>
             </Router>
         </>

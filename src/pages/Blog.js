@@ -4,25 +4,38 @@ import moment from 'moment'
 import { useParams } from 'react-router'
 
 const Blog = () => {
-    const [entry, setEntry] = useState(null)
+    const [entry, setEntry] = useState({})
+    const [loading, setLoading] = useState(false)
+    const [error, setError] = useState(null)
     const { id } = useParams()
 
     useEffect(() => {
-        axios
-            .get(`https://travel-blogs-api.herokuapp.com/blogs/${id}`)
-            .then((res) => {
-                const blogEntry = res.data
-                setEntry(blogEntry)
-                console.log(entry)
-            }).catch(err => {
-                console.error(err)
-            })
+        const fetchEntry = async () => {
+            try {
+                setLoading(true)
+                setError(null)
+                const response = await axios.get(
+                    `https://travel-blogs-api.herokuapp.com/blogs/${id}`
+                )
+                setEntry(response.data)
+            } catch (err) {
+                setError(err)
+            }
+            setLoading(false)
+        }
 
-    }, [entry, id])
+        fetchEntry()
+    }, [id])
 
     return (
         <div className="bg-black text-white">
-            {entry && (
+            {loading || error ? (
+                loading ? (
+                    <div className="loader"></div>
+                ) : (
+                    <div>Error!</div>
+                )
+            ) : (
                 <>
                     <h1>{entry.title}</h1>
                     <p>{moment(entry.date_visited).format('MMMM Do YYYY')}</p>
