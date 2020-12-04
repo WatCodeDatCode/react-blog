@@ -28,7 +28,7 @@ const Blogs = () => {
     }, [])
 
     return (
-        <div>
+        <>
             {loading || error ? (
                 loading ? (
                     <LoadingSpinner />
@@ -36,16 +36,28 @@ const Blogs = () => {
                     <Error />
                 )
             ) : (
-                <>
-                    <select className="text-dark-600">
-                        <option value="most_recent">Most recent</option>
-                        <option value="oldest_first">Oldest first</option>
-                        <option value="by_author">Alphabetical by author</option>
-                    </select>
-                    {entries.map((entry) => <BlogCard entry={entry} />)}
-                </>
+                <div className="grid lg:grid-cols-2">
+                    <div className="">
+                        <div>
+                            <select className="text-dark-600">
+                                <option value="most_recent">Most recent</option>
+                                <option value="oldest_first">
+                                    Oldest first
+                                </option>
+                                <option value="by_author">
+                                    Alphabetical by author
+                                </option>
+                            </select>
+                            <div className="flex flex-wrap">
+                                {entries.map((entry) => (
+                                    <BlogCard entry={entry} />
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+                </div>
             )}
-        </div>
+        </>
     )
 }
 
