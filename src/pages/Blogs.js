@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import axios from 'axios'
 import BlogCard from '../components/BlogCard'
 import LoadingSpinner from '../components/LoadingSpinner'
+import Error from '../components/Error'
 
 const Blogs = () => {
     const [entries, setEntries] = useState([])
@@ -26,19 +27,23 @@ const Blogs = () => {
         fetchEntries()
     }, [])
 
-    console.log(entries)
-
     return (
-        <div className="bg-dark-500 text-white">
+        <div>
             {loading || error ? (
                 loading ? (
                     <LoadingSpinner />
                 ) : (
-                    <div>Error!</div>
+                    <Error />
                 )
             ) : (
-                entries &&
-                entries.map((entry) => <BlogCard entry={entry} />)
+                <>
+                    <select className="text-dark-600">
+                        <option value="most_recent">Most recent</option>
+                        <option value="oldest_first">Oldest first</option>
+                        <option value="by_author">Alphabetical by author</option>
+                    </select>
+                    {entries.map((entry) => <BlogCard entry={entry} />)}
+                </>
             )}
         </div>
     )

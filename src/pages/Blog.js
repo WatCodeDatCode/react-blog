@@ -3,6 +3,7 @@ import axios from 'axios'
 import { useParams } from 'react-router'
 import BlogEntry from '../components/BlogEntry'
 import LoadingSpinner from '../components/LoadingSpinner'
+import Error from '../components/Error'
 
 const Blog = () => {
     const [entry, setEntry] = useState({})
@@ -34,10 +35,12 @@ const Blog = () => {
                 loading ? (
                     <LoadingSpinner />
                 ) : (
-                    <div>Error!</div>
+                    <Error />
                 )
             ) : (
-                <BlogEntry entry={entry} />
+                <div className="flex flex-wrap">
+                    <BlogEntry entry={entry} />
+                </div>
             )}
         </div>
     )
