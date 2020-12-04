@@ -14,13 +14,11 @@
     @apply px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-700;
 }
 
-.App {
-    min-height: 100vh;
-    min-width: 100vw;
-    height: 100%;
-    width: 100%;
-    background-color: #282c34;
-    color: white;
+body {
+  background-color: #282c34;
+  color: white;
+  min-height: 100vh;
+  min-width: 100vw;
 }
 
 .submit-button {

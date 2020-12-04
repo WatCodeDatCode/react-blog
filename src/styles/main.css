@@ -935,13 +935,11 @@ video {
   color: rgba(255, 255, 255, var(--tw-text-opacity));
 }
 
-.App {
-  min-height: 100vh;
-  min-width: 100vw;
-  height: 100%;
-  width: 100%;
+body {
   background-color: #282c34;
   color: white;
+  min-height: 100vh;
+  min-width: 100vw;
 }
 
 .submit-button {
