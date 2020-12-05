@@ -7,11 +7,11 @@
 @tailwind utilities;
 
 .nav-active {
-    @apply px-3 py-2 rounded-md text-sm font-medium text-white bg-gray-900;
+    @apply px-3 py-2 tracking-wide rounded-md text-xl font-bold text-primary-500 bg-dark-900;
 }
 
 .nav-inactive {
-    @apply px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-700;
+    @apply px-3 py-2 tracking-wide rounded-md text-xl font-semibold text-gray-300 hover:text-white hover:bg-gray-700;
 }
 
 body {
