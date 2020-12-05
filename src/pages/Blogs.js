@@ -64,13 +64,16 @@ const Blogs = () => {
                             lat: selectedEntry.location.lat,
                             lng: selectedEntry.location.lng,
                         }}
+                        onCloseClick={() => {
+                            setSelectedEntry(null)
+                        }}
                     >
-                        <div className="text-black w-full">
+                        <div className="bg-dark-500 rounded-lg text-white w-full">
                             <a href={`/blog/${selectedEntry._id}`}>
-                            <h2 className="font-bold text-xl mx-auto">
+                            <h2 className="text-primary-500 mx-2 sm:mx-4 text-2xl font-extrabold text-center">
                                 {selectedEntry.title}
                             </h2>
-                            <p className="mx-auto">
+                            <p className="mx-2 sm:mx-4 text-lg font-bold text-center">
                                 {moment(selectedEntry.date_visited).format(
                                     'MMMM Do YYYY'
                                 )}

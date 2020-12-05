@@ -672,11 +672,6 @@ video {
   line-height: 1.75rem;
 }
 
-.text-xl {
-  font-size: 1.25rem;
-  line-height: 1.75rem;
-}
-
 .text-2xl {
   font-size: 1.5rem;
   line-height: 2rem;
@@ -830,11 +825,6 @@ video {
 
 .text-center {
   text-align: center;
-}
-
-.text-black {
-  --tw-text-opacity: 1;
-  color: rgba(0, 0, 0, var(--tw-text-opacity));
 }
 
 .text-white {
