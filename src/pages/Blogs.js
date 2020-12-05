@@ -33,7 +33,7 @@ const Blogs = () => {
         setLoading(false)
     }
 
-    const MyMapComponent = withScriptjs(
+    const Map = withScriptjs(
         withGoogleMap((props) => (
             <GoogleMap
                 defaultZoom={6}
@@ -127,7 +127,7 @@ const Blogs = () => {
                         </div>
                     </div>
                     <div className="w-auto h-screen">
-                        <MyMapComponent
+                        <Map
                             isMarkerShown
                             googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=${process.env.REACT_APP_MAP_KEY}`}
                             loadingElement={<div style={{ height: `100%` }} />}
