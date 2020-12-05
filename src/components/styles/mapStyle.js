@@ -1,4 +1,4 @@
-export default [
+const mapStyle = [
     {
         "featureType": "all",
         "elementType": "labels.text.fill",
@@ -330,3 +330,5 @@ export default [
         ]
     }
 ]
+
+export default mapStyle
