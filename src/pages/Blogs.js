@@ -52,7 +52,7 @@ const Blogs = () => {
                                 setSelectedEntry(entry)
                             }}
                             icon={{
-                                url: '/images/logo_without_text.png',
+                                url: '/images/logo_marker.png',
                                 scaledSize: new window.google.maps.Size(35, 35)
                             }}
                         />
