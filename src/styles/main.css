@@ -851,11 +851,6 @@ video {
   color: rgba(248, 198, 48, var(--tw-text-opacity));
 }
 
-.text-secondary-500 {
-  --tw-text-opacity: 1;
-  color: rgba(221, 110, 66, var(--tw-text-opacity));
-}
-
 .hover\:text-white:hover {
   --tw-text-opacity: 1;
   color: rgba(255, 255, 255, var(--tw-text-opacity));
@@ -963,7 +958,7 @@ body {
 
 .submit-button {
   --tw-bg-opacity: 1;
-  background-color: rgba(221, 110, 66, var(--tw-bg-opacity));
+  background-color: rgba(248, 198, 48, var(--tw-bg-opacity));
 }
 
 .submit-button:hover {
@@ -979,7 +974,7 @@ body {
   padding-left: 1rem;
   padding-right: 1rem;
   --tw-text-opacity: 1;
-  color: rgba(255, 255, 255, var(--tw-text-opacity));
+  color: rgba(8, 9, 10, var(--tw-text-opacity));
   text-transform: uppercase;
   letter-spacing: 0.05em;
   width: 100%;
@@ -1004,7 +999,7 @@ body {
   line-height: 1rem;
   margin-bottom: 0.5rem;
   --tw-text-opacity: 1;
-  color: rgba(0, 0, 0, var(--tw-text-opacity));
+  color: rgba(228, 139, 104, var(--tw-text-opacity));
   text-transform: uppercase;
   letter-spacing: 0.025em;
 }
@@ -1014,18 +1009,20 @@ body {
      -moz-appearance: none;
           appearance: none;
   --tw-bg-opacity: 1;
-  background-color: rgba(243, 244, 246, var(--tw-bg-opacity));
+  background-color: rgba(83, 86, 93, var(--tw-bg-opacity));
   border-radius: 0.25rem;
   border-width: 1px;
   display: block;
   line-height: 1.25;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
   padding-left: 1rem;
   padding-right: 1rem;
   padding-right: 2rem;
   --tw-text-opacity: 1;
-  color: rgba(0, 0, 0, var(--tw-text-opacity));
+  color: rgba(255, 255, 255, var(--tw-text-opacity));
   width: 100%;
 }
 

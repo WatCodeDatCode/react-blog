@@ -21,15 +21,15 @@ body {
 }
 
 .submit-button {
-  @apply py-2 px-4 uppercase rounded-full cursor-pointer tracking-wider w-full bg-secondary-500 text-white sm:w-1/2 md:w-1/3 hover:bg-secondary-700;
+  @apply py-2 px-4 uppercase rounded-full cursor-pointer tracking-wider w-full bg-primary-500 text-dark-900 sm:w-1/2 md:w-1/3 hover:bg-secondary-700;
 }
 
 .form-label {
-  @apply block uppercase tracking-wide text-black text-xs font-bold mb-2;
+  @apply block uppercase tracking-wide text-secondary-400 text-xs font-bold mb-2;
 }
 
 .form-input {
-  @apply block appearance-none w-full bg-gray-100 border text-black py-3 px-4 pr-8 leading-tight rounded;
+  @apply block appearance-none outline-none w-full bg-dark-400 border text-white py-3 px-4 pr-8 leading-tight rounded;
 }
 
 .loader {

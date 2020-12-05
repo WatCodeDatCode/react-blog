@@ -1,8 +1,12 @@
 import React, { useState } from 'react'
+import {useHistory} from 'react-router-dom'
 import Geocode from 'react-geocode'
 import axios from 'axios'
+import LoadingSpinner from '../components/LoadingSpinner'
+import Error from '../components/Error'
 
 const NewBlog = () => {
+    let history = useHistory();
     const [title, setTitle] = useState('')
     const [city, setCity] = useState('')
     const [country, setCountry] = useState('')
@@ -11,8 +15,6 @@ const NewBlog = () => {
     const [authorImg, setAuthorImg] = useState('')
     const [placeImg, setPlaceImg] = useState('')
     const [blogText, setBlogText] = useState('')
-    const [lat, setLat] = useState('')
-    const [lng, setLng] = useState('')
 
     const [loading, setLoading] = useState(false)
     const [error, setError] = useState(null)
@@ -61,23 +63,12 @@ const NewBlog = () => {
         setBlogText(value)
     }
 
-    const fetchGeocoordinates = async () => {
-        try {
-            setLoading(true)
-            setError(null)
-            const response = await Geocode.fromAddress(`${city},${country}`)
-            const { lat, lng } = await response.results[0].geometry.location
-            setLat(lat)
-            setLng(lng)
-        } catch (err) {
-            setError(err)
-            console.error(err)
-        }
-        setLoading(false)
-    }
-
     const postData = async () => {
-        await fetchGeocoordinates().then(
+        setLoading(true)
+        setError(null)
+
+        await Geocode.fromAddress(`${city},${country}`).then((response) => {
+            const { lat, lng } = response.results[0].geometry.location
             axios
                 .post('https://travel-blogs-api.herokuapp.com/blogs', {
                     title,
@@ -91,13 +82,21 @@ const NewBlog = () => {
                     lat,
                     lng,
                 })
+                .catch((err) => {
+                    setError(err)
+                    console.error(err)
+                })
                 .then((response) => {
                     const data = response.data
                     console.log(data)
-                   // TODO: Push to history on successful submit
+                    history.push('/blog')
                 })
-                .catch((err) => setError(err))
-        )
+                .catch((err) => {
+                    setError(err)
+                    console.error(err)
+                })
+        })
+        setLoading(false)
     }
 
     const handleSubmit = async (event) => {
@@ -109,13 +108,13 @@ const NewBlog = () => {
         <div>
             {loading || error ? (
                 loading ? (
-                    <div className="loader"></div>
+                    <LoadingSpinner />
                 ) : (
-                    <div>Error!</div>
+                    <Error />
                 )
             ) : (
                 <div className="w-full sm:w-1/2 flex flex-col mx-auto">
-                    <h2 className="text-center text-6xl text-secondary-500 my-2 sm:my-6">
+                    <h2 className="text-center text-6xl text-primary-500 my-2 sm:my-6">
                         Add new blog entry
                     </h2>
                     <form className="mx-6 pt-2 w-full" onSubmit={handleSubmit}>
