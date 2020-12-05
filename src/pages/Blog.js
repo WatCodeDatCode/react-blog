@@ -71,8 +71,13 @@ const Blog = () => {
                 )
             ) : (
                 <div className="grid lg:grid-cols-2">
-                    <div className="flex flex-wrap">
-                        <BlogEntry entry={entry} />
+                    <div>
+                        <a href={`/blog/edit/${entry._id}`}>
+                            <button>Edit entry</button>
+                        </a>
+                        <div className="flex flex-wrap">
+                            <BlogEntry entry={entry} />
+                        </div>
                     </div>
                     <div className="w-auto h-screen">
                         <Map
