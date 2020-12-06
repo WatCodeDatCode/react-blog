@@ -15,33 +15,45 @@
 }
 
 body {
-  background-color: #282c34;
-  color: white;
-  min-height: 100vh;
+    background-color: #181a1f;
+    color: white;
+    min-height: 100vh;
 }
 
 .submit-button {
-  @apply py-2 px-4 uppercase rounded-full cursor-pointer tracking-wider w-full bg-primary-500 text-dark-900 sm:w-1/2 md:w-1/3 hover:bg-secondary-700;
+    @apply py-2 px-4 uppercase rounded-full cursor-pointer tracking-wider w-full bg-primary-500 text-dark-900 sm:w-1/2 md:w-1/3 hover:bg-secondary-700;
 }
 
 .form-label {
-  @apply block uppercase tracking-wide text-secondary-400 text-xs font-bold mb-2;
+    @apply block uppercase tracking-wide text-secondary-400 text-xs font-bold mb-2;
 }
 
 .form-input {
-  @apply block appearance-none outline-none w-full bg-dark-400 border text-white py-3 px-4 pr-8 leading-tight rounded;
+    @apply block appearance-none outline-none w-full bg-dark-400 border text-white py-3 px-4 pr-8 leading-tight rounded;
+}
+
+.blog-card {
+    background-image: url('https://images.unsplash.com/photo-1507476691696-10da4222fb71?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format');
+    background-size: contain;
+    background-position: bottom;
+    @apply text-white w-auto md:w-2/5 rounded-lg overflow-hidden mx-4 md:mx-auto my-4 sm:my-6 lg:my-10 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-105;
+    
 }
 
 .loader {
-  border: 18px solid #f8f8f8;
-  border-top: 18px solid #e48b68;
-  height: 10em;
-  width: 10em;
-  border-radius: 50%;
-  animation: spin 2s linear infinite;
+    border: 18px solid #f8f8f8;
+    border-top: 18px solid #e48b68;
+    height: 10em;
+    width: 10em;
+    border-radius: 50%;
+    animation: spin 2s linear infinite;
 }
 
 @keyframes spin {
-  0%  { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }

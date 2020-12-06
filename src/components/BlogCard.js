@@ -3,11 +3,11 @@ import moment from 'moment'
 
 const BlogCard = ({ entry }) => {
     return (
-        <div className="bg-dark-700 text-whitee w-auto md:w-2/5 rounded-lg overflow-hidden mx-4 md:mx-auto my-4 sm:my-6 lg:my-10">
+        <div className="blog-card shadow-green hover:shadow-greenXL">
             <a href={`/blog/${entry._id}`}>
-                <div className="h-full flex flex-col justify-between">
+                <div className="h-60vh flex flex-col justify-between">
                     <img
-                        className="w-auto object-cover"
+                        className="w-auto h-1/2 object-cover"
                         src={entry.place_img}
                         alt={`${entry.city}, ${entry.country}`}
                     />

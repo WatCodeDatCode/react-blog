@@ -177,6 +177,8 @@ module.exports = {
             '2xl': '0 25px 50px -12px rgba(0, 0, 0, 0.25)',
             inner: 'inset 0 2px 4px 0 rgba(0, 0, 0, 0.06)',
             none: 'none',
+            green: '0 1px 3px 0 rgba(47,191,113, 0.20), 0 1px 2px 0 rgba(47,191,113, 0.50)',
+            greenXL: '0 20px 25px -5px rgba(47,191,113, 0.20), 0 10px 10px -5px rgba(47,191,113, 0.50)' 
         },
         container: {},
         cursor: {
@@ -416,6 +418,15 @@ module.exports = {
             '5/6': '83.333333%',
             full: '100%',
             screen: '100vh',
+            '10vh': '10vh',
+            '20vh': '20vh',
+            '30vh': '30vh',
+            '40vh': '40vh',
+            '50vh': '50vh',
+            '60vh': '60vh',
+            '70vh': '70vh',
+            '80vh': '80vh',
+            '90vh': '90vh',
         }),
         inset: (theme, { negative }) => ({
             auto: 'auto',
