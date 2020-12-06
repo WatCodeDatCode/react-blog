@@ -6,6 +6,7 @@ import Blog from './pages/Blog'
 import Contact from './pages/Contact'
 import NewBlog from './pages/NewBlog'
 import EditBlog from './pages/EditBlog'
+import Footer from './components/Footer'
 
 function App() {
 
@@ -20,6 +21,7 @@ function App() {
                     <Route path='/blog/edit/:id' component={EditBlog} exact={true} />
                     <Route path='/contact' component={Contact} exact={true} />
                 </Switch>
+                <Footer />
             </Router>
     )
 }

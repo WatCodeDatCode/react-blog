@@ -49,15 +49,15 @@ module.exports = {
                 900: '#32280a',
             },
             secondary: {
-                100: '#f8e2d9',
-                200: '#f1c5b3',
-                300: '#eba88e',
-                400: '#e48b68',
-                500: '#dd6e42',
-                600: '#b15835',
-                700: '#854228',
-                800: '#582c1a',
-                900: '#2c160d',
+                100: '#fce4cf',
+                200: '#f9c89f',
+                300: '#f7ad6e',
+                400: '#f4913e',
+                500: '#f1760e',
+                600: '#c15e0b',
+                700: '#914708',
+                800: '#602f06',
+                900: '#301803',
             },
         },
         spacing: {
@@ -177,10 +177,14 @@ module.exports = {
             '2xl': '0 25px 50px -12px rgba(0, 0, 0, 0.25)',
             inner: 'inset 0 2px 4px 0 rgba(0, 0, 0, 0.06)',
             none: 'none',
-            green: '0 1px 3px 0 rgba(47,191,113, 0.20), 0 1px 2px 0 rgba(47,191,113, 0.50)',
-            yellow: '0 1px 3px 0 rgba(248,198,48, 0.20), 0 1px 2px 0 rgba(248,198,48, 0.50)',
-            greenXL: '0 20px 25px -5px rgba(47,191,113, 0.20), 0 10px 10px -5px rgba(47,191,113, 0.50)', 
-            yellowXL: '0 20px 25px -5px rgba(248,198,48, 0.20), 0 10px 10px -5px rgba(248,198,48, 0.50)', 
+            green:
+                '0 1px 3px 0 rgba(47,191,113, 0.20), 0 1px 2px 0 rgba(47,191,113, 0.50)',
+            yellow:
+                '0 1px 3px 0 rgba(248,198,48, 0.20), 0 1px 2px 0 rgba(248,198,48, 0.50)',
+            greenXL:
+                '0 20px 25px -5px rgba(47,191,113, 0.20), 0 10px 10px -5px rgba(47,191,113, 0.50)',
+            yellowXL:
+                '0 20px 25px -5px rgba(248,198,48, 0.20), 0 10px 10px -5px rgba(248,198,48, 0.50)',
         },
         container: {},
         cursor: {
