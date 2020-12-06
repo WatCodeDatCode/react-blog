@@ -72,7 +72,7 @@ const Blog = () => {
             ) : (
                 <div className="grid lg:grid-cols-2">
                     <BlogEntry entry={entry} />
-                    <div className="w-auto h-screen">
+                    <div className="map-container">
                         <Map
                             googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=${process.env.REACT_APP_MAP_KEY}`}
                             loadingElement={<div style={{ height: `100%` }} />}

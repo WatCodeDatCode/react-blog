@@ -914,6 +914,15 @@ body {
   color: rgba(255, 255, 255, var(--tw-text-opacity));
 }
 
+.map-container {
+  height: 100vh;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0px;
+  left: 0px;
+  width: auto;
+}
+
 .submit-button {
   --tw-bg-opacity: 1;
   background-color: rgba(248, 198, 48, var(--tw-bg-opacity));
