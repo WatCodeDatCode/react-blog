@@ -178,7 +178,9 @@ module.exports = {
             inner: 'inset 0 2px 4px 0 rgba(0, 0, 0, 0.06)',
             none: 'none',
             green: '0 1px 3px 0 rgba(47,191,113, 0.20), 0 1px 2px 0 rgba(47,191,113, 0.50)',
-            greenXL: '0 20px 25px -5px rgba(47,191,113, 0.20), 0 10px 10px -5px rgba(47,191,113, 0.50)' 
+            yellow: '0 1px 3px 0 rgba(248,198,48, 0.20), 0 1px 2px 0 rgba(248,198,48, 0.50)',
+            greenXL: '0 20px 25px -5px rgba(47,191,113, 0.20), 0 10px 10px -5px rgba(47,191,113, 0.50)', 
+            yellowXL: '0 20px 25px -5px rgba(248,198,48, 0.20), 0 10px 10px -5px rgba(248,198,48, 0.50)', 
         },
         container: {},
         cursor: {

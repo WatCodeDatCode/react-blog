@@ -582,10 +582,6 @@ video {
   display: grid;
 }
 
-.flex-row {
-  flex-direction: row;
-}
-
 .flex-col {
   flex-direction: column;
 }
@@ -608,10 +604,6 @@ video {
 
 .justify-between {
   justify-content: space-between;
-}
-
-.justify-evenly {
-  justify-content: space-evenly;
 }
 
 .flex-1 {
@@ -654,16 +646,8 @@ video {
   height: auto;
 }
 
-.h-1\/2 {
-  height: 50%;
-}
-
 .h-screen {
   height: 100vh;
-}
-
-.h-60vh {
-  height: 60vh;
 }
 
 .text-lg {
@@ -700,11 +684,6 @@ video {
   margin-right: 0.5rem;
 }
 
-.my-3 {
-  margin-top: 0.75rem;
-  margin-bottom: 0.75rem;
-}
-
 .mx-6 {
   margin-left: 1.5rem;
   margin-right: 1.5rem;
@@ -720,20 +699,12 @@ video {
   margin-right: -0.75rem;
 }
 
-.mt-3 {
-  margin-top: 0.75rem;
-}
-
 .mb-6 {
   margin-bottom: 1.5rem;
 }
 
 .max-w-7xl {
   max-width: 80rem;
-}
-
-.object-cover {
-  object-fit: cover;
 }
 
 .focus\:outline-none:focus {
@@ -782,16 +753,6 @@ video {
 
 * {
   --tw-shadow: 0 0 #0000;
-}
-
-.shadow-green {
-  --tw-shadow: 0 1px 3px 0 rgba(47,191,113, 0.20), 0 1px 2px 0 rgba(47,191,113, 0.50);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-}
-
-.hover\:shadow-greenXL:hover {
-  --tw-shadow: 0 20px 25px -5px rgba(47,191,113, 0.20), 0 10px 10px -5px rgba(47,191,113, 0.50);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
 * {
@@ -907,15 +868,15 @@ video {
   background-color: rgba(8, 9, 10, var(--tw-bg-opacity));
   border-radius: 0.375rem;
   font-weight: 700;
-  font-size: 1.25rem;
-  line-height: 1.75rem;
+  font-size: 1.5rem;
+  line-height: 2rem;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   padding-left: 0.75rem;
   padding-right: 0.75rem;
   --tw-text-opacity: 1;
   color: rgba(248, 198, 48, var(--tw-text-opacity));
-  letter-spacing: 0.025em;
+  letter-spacing: 0.05em;
 }
 
 .nav-inactive:hover {
@@ -926,8 +887,8 @@ video {
 .nav-inactive {
   border-radius: 0.375rem;
   font-weight: 600;
-  font-size: 1.25rem;
-  line-height: 1.75rem;
+  font-size: 1.5rem;
+  line-height: 2rem;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   padding-left: 0.75rem;
@@ -942,13 +903,15 @@ video {
 }
 
 .nav-inactive {
-  letter-spacing: 0.025em;
+  letter-spacing: 0.05em;
 }
 
 body {
-  background-color: #181a1f;
-  color: white;
+  --tw-bg-opacity: 1;
+  background-color: rgba(24, 26, 31, var(--tw-bg-opacity));
   min-height: 100vh;
+  --tw-text-opacity: 1;
+  color: rgba(255, 255, 255, var(--tw-text-opacity));
 }
 
 .submit-button {
@@ -1022,15 +985,24 @@ body {
 }
 
 .blog-card {
-  background-image: url('https://images.unsplash.com/photo-1507476691696-10da4222fb71?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format');
-  background-size: contain;
-  background-position: bottom;
+  --tw-bg-opacity: 1;
+  background-color: rgba(40, 44, 52, var(--tw-bg-opacity));
   border-radius: 0.5rem;
   margin-top: 1rem;
   margin-bottom: 1rem;
   margin-left: 1rem;
   margin-right: 1rem;
   overflow: hidden;
+  --tw-shadow: 0 1px 3px 0 rgba(248,198,48, 0.20), 0 1px 2px 0 rgba(248,198,48, 0.50);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.blog-card:hover {
+  --tw-shadow: 0 20px 25px -5px rgba(248,198,48, 0.20), 0 10px 10px -5px rgba(248,198,48, 0.50);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.blog-card {
   --tw-text-opacity: 1;
   color: rgba(255, 255, 255, var(--tw-text-opacity));
   width: auto;
@@ -1077,6 +1049,139 @@ body {
   .blog-card {
     margin-top: 2.5rem;
     margin-bottom: 2.5rem;
+  }
+}
+
+.card-content-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 60vh;
+}
+
+.card-image {
+  height: 50%;
+  object-fit: cover;
+  object-position: center;
+  width: auto;
+}
+
+.card-title-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-top: 0.75rem;
+}
+
+@media (min-width: 768px) {
+  .card-title-container {
+    margin-top: 1.5rem;
+  }
+}
+
+.card-title {
+  font-family: nationalPark;
+  font-weight: 800;
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  text-align: center;
+  --tw-text-opacity: 1;
+  color: rgba(248, 198, 48, var(--tw-text-opacity));
+  letter-spacing: 0.025em;
+}
+
+@media (min-width: 640px) {
+  .card-title {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+}
+
+.card-date-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+@media (min-width: 768px) {
+  .card-date-container {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+.card-date {
+  font-weight: 700;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+@media (min-width: 640px) {
+  .card-date {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+}
+
+.card-author-container {
+  display: flex;
+  align-items: center;
+  height: 10vh;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .card-author-container {
+    justify-content: space-between;
+  }
+}
+
+.card-author-img {
+  border-radius: 0.375rem;
+  align-self: flex-start;
+  height: auto;
+  object-fit: cover;
+  object-position: center;
+  width: 33.333333%;
+}
+
+@media (min-width: 768px) {
+  .card-author-img {
+    width: 25%;
+  }
+}
+
+.card-author-name {
+  display: flex;
+  flex-wrap: wrap;
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 1024px) {
+  .card-author-name {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .card-author-name {
+    font-size: 1.5rem;
+    line-height: 2rem;
   }
 }
 
@@ -1156,17 +1261,8 @@ body {
     justify-content: space-between;
   }
 
-  .md\:my-6 {
-    margin-top: 1.5rem;
-    margin-bottom: 1.5rem;
-  }
-
   .md\:mb-0 {
     margin-bottom: 0px;
-  }
-
-  .md\:mt-6 {
-    margin-top: 1.5rem;
   }
 
   .md\:w-1\/4 {

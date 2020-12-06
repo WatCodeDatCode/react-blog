@@ -3,33 +3,33 @@ import moment from 'moment'
 
 const BlogCard = ({ entry }) => {
     return (
-        <div className="blog-card shadow-green hover:shadow-greenXL">
+        <div className="blog-card">
             <a href={`/blog/${entry._id}`}>
-                <div className="h-60vh flex flex-col justify-between">
+                <div className="card-content-container">
                     <img
-                        className="w-auto h-1/2 object-cover"
+                        className="card-image"
                         src={entry.place_img}
                         alt={`${entry.city}, ${entry.country}`}
                     />
-                    <div className="mt-3 md:mt-6 flex flex-row flex-wrap justify-evenly items-center">
-                        <h2 className="text-primary-500 mx-2 sm:mx-4 text-2xl font-extrabold text-center">
+                    <div className="card-title-container">
+                        <h2 className="card-title">
                             {entry.title}
                         </h2>
                     </div>
 
-                    <div className="my-3 md:my-6 flex flex-row flex-wrap justify-evenly items-center">
-                        <p className="mx-2 sm:mx-4 text-lg font-bold">
+                    <div className="card-date-container">
+                        <p className="card-date">
                             {moment(entry.date_visited).format('MMMM Do YYYY')}
                         </p>
                     </div>
 
-                    <div className="w-full flex items-center md:justify-between">
+                    <div className="card-author-container">
                         <img
-                            className="rounded-md self-start w-1/3 md:w-1/4 h-auto"
+                            className="card-author-img"
                             src={entry.author_img}
                             alt={`${entry.city}, ${entry.country}`}
                         />
-                        <p className="mx-auto text-2xl lg:text-lg xl:text-2xl font-bold flex flex-wrap">
+                        <p className="card-author-name">
                             {entry.author}
                         </p>
                     </div>

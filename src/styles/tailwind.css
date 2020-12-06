@@ -7,17 +7,15 @@
 @tailwind utilities;
 
 .nav-active {
-    @apply px-3 py-2 tracking-wide rounded-md text-xl font-bold text-primary-500 bg-dark-900;
+    @apply px-3 py-2 tracking-wider rounded-md text-2xl font-bold text-primary-500 bg-dark-900;
 }
 
 .nav-inactive {
-    @apply px-3 py-2 tracking-wide rounded-md text-xl font-semibold text-gray-300 hover:text-white hover:bg-gray-700;
+    @apply px-3 py-2 tracking-wider rounded-md text-2xl font-semibold text-gray-300 hover:text-white hover:bg-gray-700;
 }
 
 body {
-    background-color: #181a1f;
-    color: white;
-    min-height: 100vh;
+    @apply min-h-screen text-white bg-dark-700;
 }
 
 .submit-button {
@@ -33,11 +31,43 @@ body {
 }
 
 .blog-card {
-    background-image: url('https://images.unsplash.com/photo-1507476691696-10da4222fb71?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format');
-    background-size: contain;
-    background-position: bottom;
-    @apply text-white w-auto md:w-2/5 rounded-lg overflow-hidden mx-4 md:mx-auto my-4 sm:my-6 lg:my-10 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-105;
-    
+    @apply bg-dark-500 text-white w-auto md:w-2/5 rounded-lg overflow-hidden mx-4 md:mx-auto my-4 sm:my-6 lg:my-10 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-105 shadow-yellow hover:shadow-yellowXL;
+}
+
+.card-content-container {
+  @apply h-60vh flex flex-col justify-between;
+}
+
+.card-image {
+  @apply w-auto h-1/2 object-center object-cover;
+}
+
+.card-title-container {
+  @apply mt-3 md:mt-6 flex flex-row flex-wrap justify-evenly items-center;
+}
+
+.card-title {
+  @apply text-primary-500 mx-2 sm:mx-4 text-4xl font-nationalPark tracking-wide font-extrabold text-center;
+}
+
+.card-date-container {
+  @apply my-3 md:my-6 flex flex-row flex-wrap justify-evenly items-center;
+}
+
+.card-date {
+  @apply mx-2 sm:mx-4 text-xl font-bold;
+}
+
+.card-author-container {
+  @apply h-10vh w-full flex items-center md:justify-between;
+}
+
+.card-author-img {
+  @apply rounded-md self-start w-1/3 md:w-1/4 h-auto object-cover object-center;
+}
+
+.card-author-name {
+  @apply mx-auto text-2xl lg:text-lg xl:text-2xl font-bold flex flex-wrap;
 }
 
 .loader {
