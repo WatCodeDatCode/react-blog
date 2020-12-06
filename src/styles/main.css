@@ -1185,6 +1185,11 @@ body {
   }
 }
 
+.buttons-container {
+  display: flex;
+  justify-content: space-between;
+}
+
 .loader {
   border: 18px solid #f8f8f8;
   border-top: 18px solid #e48b68;

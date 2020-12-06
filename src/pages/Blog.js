@@ -71,14 +71,7 @@ const Blog = () => {
                 )
             ) : (
                 <div className="grid lg:grid-cols-2">
-                    <div>
-                        <a href={`/blog/edit/${entry._id}`}>
-                            <button>Edit entry</button>
-                        </a>
-                        <div className="flex flex-wrap">
-                            <BlogEntry entry={entry} />
-                        </div>
-                    </div>
+                    <BlogEntry entry={entry} />
                     <div className="w-auto h-screen">
                         <Map
                             googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=${process.env.REACT_APP_MAP_KEY}`}

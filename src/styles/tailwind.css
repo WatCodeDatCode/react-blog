@@ -70,6 +70,10 @@ body {
   @apply mx-auto text-2xl lg:text-lg xl:text-2xl font-bold flex flex-wrap;
 }
 
+.buttons-container {
+  @apply flex justify-between;
+}
+
 .loader {
     border: 18px solid #f8f8f8;
     border-top: 18px solid #e48b68;
