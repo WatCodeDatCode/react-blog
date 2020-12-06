@@ -19,6 +19,9 @@ const Blogs = () => {
     const [error, setError] = useState(null)
     const [selectedEntry, setSelectedEntry] = useState(null)
 
+    const [sortedEntries, setSortedEntries] = useState([])
+    const [sortBy, setSortBy] = useState('most_recent')
+
     const fetchEntries = async () => {
         try {
             setLoading(true)
@@ -27,6 +30,7 @@ const Blogs = () => {
                 `https://travel-blogs-api.herokuapp.com/blogs/`
             )
             setEntries(response.data)
+            setSortedEntries(response.data)
         } catch (err) {
             setError(err)
         }
@@ -37,11 +41,14 @@ const Blogs = () => {
         withGoogleMap((props) => (
             <GoogleMap
                 defaultZoom={6}
-                defaultCenter={{ lat: entries[entries.length - 1].location.lat, lng: entries[entries.length - 1].location.lng }}
-                defaultOptions={{styles: mapStyle}}
+                defaultCenter={{
+                    lat: sortedEntries[0].location.lat,
+                    lng: sortedEntries[0].location.lng,
+                }}
+                defaultOptions={{ styles: mapStyle }}
             >
                 {props.isMarkerShown &&
-                    entries.map((entry) => (
+                    sortedEntries.map((entry) => (
                         <Marker
                             key={entry._id}
                             position={{
@@ -53,7 +60,7 @@ const Blogs = () => {
                             }}
                             icon={{
                                 url: '/images/logo_marker.png',
-                                scaledSize: new window.google.maps.Size(35, 35)
+                                scaledSize: new window.google.maps.Size(35, 35),
                             }}
                         />
                     ))}
@@ -70,22 +77,24 @@ const Blogs = () => {
                     >
                         <div className="bg-dark-500 rounded-lg text-white w-full">
                             <a href={`/blog/${selectedEntry._id}`}>
-                            <h2 className="text-primary-500 mx-2 sm:mx-4 text-2xl font-extrabold text-center">
-                                {selectedEntry.title}
-                            </h2>
-                            <p className="mx-2 sm:mx-4 text-lg font-bold text-center">
-                                {moment(selectedEntry.date_visited).format(
-                                    'MMMM Do YYYY'
-                                )}
-                            </p>
-                            <div className="w-full flex items-center md:justify-between">
-                            <img
-                                className="rounded-md self-start w-1/3 md:w-1/4 h-auto"
-                                src={selectedEntry.author_img}
-                                alt={`${selectedEntry.city}, ${selectedEntry.country}`}
-                            />
-                            <p className="mx-auto text-2xl lg:text-lg xl:text-2xl font-bold flex flex-wrap">{selectedEntry.author}</p>
-                            </div>
+                                <h2 className="text-primary-500 mx-2 sm:mx-4 text-2xl font-extrabold text-center">
+                                    {selectedEntry.title}
+                                </h2>
+                                <p className="mx-2 sm:mx-4 text-lg font-bold text-center">
+                                    {moment(selectedEntry.date_visited).format(
+                                        'MMMM Do YYYY'
+                                    )}
+                                </p>
+                                <div className="w-full flex items-center md:justify-between">
+                                    <img
+                                        className="rounded-md self-start w-1/3 md:w-1/4 h-auto"
+                                        src={selectedEntry.author_img}
+                                        alt={`${selectedEntry.city}, ${selectedEntry.country}`}
+                                    />
+                                    <p className="mx-auto text-2xl lg:text-lg xl:text-2xl font-bold flex flex-wrap">
+                                        {selectedEntry.author}
+                                    </p>
+                                </div>
                             </a>
                         </div>
                     </InfoWindow>
@@ -97,6 +106,29 @@ const Blogs = () => {
     useEffect(() => {
         fetchEntries()
     }, [])
+
+    useEffect(() => {
+        const sortEntries = (type) => {
+            let sorted
+
+            if (type === 'most_recent') {
+                sorted = [...entries].sort((a, b) =>
+                    b.date_visited.localeCompare(a.date_visited)
+                )
+            } else if (type === 'oldest_first') {
+                sorted = [...entries].sort((a, b) =>
+                    a.date_visited.localeCompare(b.date_visited)
+                )
+            } else if (type === 'by_author') {
+                sorted = [...entries].sort((a, b) =>
+                    a.author.localeCompare(b.author)
+                )
+            }
+            setSortedEntries(sorted)
+        }
+
+        sortEntries(sortBy)
+    }, [sortBy, entries])
 
     return (
         <>
@@ -110,7 +142,12 @@ const Blogs = () => {
                 <div className="grid lg:grid-cols-2">
                     <div className="">
                         <div>
-                            <select className="text-dark-600">
+                            <select
+                                className="text-dark-600"
+                                onChange={(event) =>
+                                    setSortBy(event.target.value)
+                                }
+                            >
                                 <option value="most_recent">Most recent</option>
                                 <option value="oldest_first">
                                     Oldest first
@@ -120,7 +157,7 @@ const Blogs = () => {
                                 </option>
                             </select>
                             <div className="flex flex-wrap">
-                                {entries.map((entry) => (
+                                {sortedEntries.map((entry) => (
                                     <BlogCard entry={entry} />
                                 ))}
                             </div>
