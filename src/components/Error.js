@@ -1,12 +1,10 @@
 import React from 'react'
 
-const Error = () => {
+const Error = ({ error }) => {
     return (
         <div className="h-screen flex justify-center items-center">
-            <div className="text-4xl">
-                Uh oh! We ran into a problem getting that data. Please make sure
-                the URL is correct or try again later.
-            </div>
+            <div className="text-4xl">Uh oh! It seems we have a problem:</div>
+            <p>{error.message}</p>
         </div>
     )
 }

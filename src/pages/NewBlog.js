@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
-import {useHistory} from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 import Geocode from 'react-geocode'
 import axios from 'axios'
 import LoadingSpinner from '../components/LoadingSpinner'
 import Error from '../components/Error'
 
 const NewBlog = () => {
-    let history = useHistory();
+    let history = useHistory()
     const [title, setTitle] = useState('')
     const [city, setCity] = useState('')
     const [country, setCountry] = useState('')
@@ -66,37 +66,34 @@ const NewBlog = () => {
     const postData = async () => {
         setLoading(true)
         setError(null)
-
         await Geocode.fromAddress(`${city},${country}`).then((response) => {
             const { lat, lng } = response.results[0].geometry.location
-            axios
-                .post('https://travel-blogs-api.herokuapp.com/blogs', {
-                    title,
-                    city,
-                    country,
-                    author,
-                    author_img: authorImg,
-                    blog_text: blogText,
-                    date_visited: dateVisited,
-                    place_img: placeImg,
-                    lat,
-                    lng,
-                })
-                .catch((err) => {
-                    setError(err)
-                    console.error(err)
-                })
-                .then((response) => {
-                    const data = response.data
-                    console.log(data)
-                    history.push('/blog')
-                })
-                .catch((err) => {
-                    setError(err)
-                    console.error(err)
-                })
+                axios
+                    .post('https://travel-blogs-api.herokuapp.com/blogs', {
+                        title,
+                        city,
+                        country,
+                        author,
+                        author_img: authorImg,
+                        blog_text: blogText,
+                        date_visited: dateVisited,
+                        place_img: placeImg,
+                        lat,
+                        lng,
+                    })
+                    .catch((err) => {
+                        setError(err)
+                        console.error(err)
+                    })
+                    .then((response) => {
+                        const data = response.data
+                        console.log(data)
+                        history.push('/blog')
+                    })
+        }).catch((err) => {
+            setLoading(false)
+            setError(err)
         })
-        setLoading(false)
     }
 
     const handleSubmit = async (event) => {
@@ -110,7 +107,7 @@ const NewBlog = () => {
                 loading ? (
                     <LoadingSpinner />
                 ) : (
-                    <Error />
+                    <Error error={error.message} />
                 )
             ) : (
                 <div className="w-full sm:w-1/2 flex flex-col mx-auto">

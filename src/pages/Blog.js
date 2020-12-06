@@ -67,7 +67,7 @@ const Blog = () => {
                 loading ? (
                     <LoadingSpinner />
                 ) : (
-                    <Error />
+                    <Error error={error.message} />
                 )
             ) : (
                 <div className="grid lg:grid-cols-2">

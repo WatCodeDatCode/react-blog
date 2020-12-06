@@ -7,7 +7,7 @@ import LoadingSpinner from '../components/LoadingSpinner'
 import Error from '../components/Error'
 
 const NewBlog = () => {
-    let history = useHistory();
+    let history = useHistory()
     const { id } = useParams()
 
     const [title, setTitle] = useState(null)
@@ -70,38 +70,38 @@ const NewBlog = () => {
         setLoading(true)
         setError(null)
 
-        await Geocode.fromAddress(`${city},${country}`).then((response) => {
-            const { lat, lng } = response.results[0].geometry.location
-            axios
-                .put(`https://travel-blogs-api.herokuapp.com/blogs/${id}`, {
-                    title,
-                    city,
-                    country,
-                    author,
-                    author_img: authorImg,
-                    blog_text: blogText,
-                    date_visited: dateVisited,
-                    place_img: placeImg,
-                    location: {
-                        lat,
-                        lng,
-                    }
-                })
-                .catch((err) => {
-                    setError(err)
-                    console.error(err)
-                })
-                .then((response) => {
-                    const data = response.data
-                    console.log(data)
-                    history.push('/blog')
-                })
-                .catch((err) => {
-                    setError(err)
-                    console.error(err)
-                })
-        })
-        setLoading(false)
+        await Geocode.fromAddress(`${city},${country}`)
+            .then((response) => {
+                const { lat, lng } = response.results[0].geometry.location
+                axios
+                    .put(`https://travel-blogs-api.herokuapp.com/blogs/${id}`, {
+                        title,
+                        city,
+                        country,
+                        author,
+                        author_img: authorImg,
+                        blog_text: blogText,
+                        date_visited: dateVisited,
+                        place_img: placeImg,
+                        location: {
+                            lat,
+                            lng,
+                        },
+                    })
+                    .catch((err) => {
+                        setError(err)
+                        console.error(err)
+                    })
+                    .then((response) => {
+                        const data = response.data
+                        console.log(data)
+                        history.push('/blog')
+                    })
+            })
+            .catch((err) => {
+                setLoading(false)
+                setError(err)
+            })
     }
 
     const handleSubmit = async (event) => {
@@ -121,7 +121,9 @@ const NewBlog = () => {
                 setTitle(response.data.title)
                 setCity(response.data.city)
                 setCountry(response.data.country)
-                setDateVisited(moment(response.data.date_visited).format('YYYY-MM-DD'))
+                setDateVisited(
+                    moment(response.data.date_visited).format('YYYY-MM-DD')
+                )
                 setAuthor(response.data.author)
                 setAuthorImg(response.data.author_img)
                 setPlaceImg(response.data.place_img)
@@ -140,7 +142,7 @@ const NewBlog = () => {
                 loading ? (
                     <LoadingSpinner />
                 ) : (
-                    <Error />
+                    <Error error={error.message} />
                 )
             ) : (
                 <div className="w-full sm:w-1/2 flex flex-col mx-auto">
