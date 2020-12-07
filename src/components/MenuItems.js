@@ -1,7 +1,7 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 
-const MenuItems = () => {
+const MenuItems = ({ onClick }) => {
     return (
         <>
             <NavLink
@@ -9,6 +9,7 @@ const MenuItems = () => {
                 className="nav-inactive"
                 activeClassName="nav-active"
                 exact={true}
+                onClick={onClick}
             >
                 Home
             </NavLink>
@@ -17,6 +18,7 @@ const MenuItems = () => {
                 className="nav-inactive"
                 activeClassName="nav-active text-primary-500"
                 exact={true}
+                onClick={onClick}
             >
                 Blog
             </NavLink>
@@ -24,6 +26,7 @@ const MenuItems = () => {
                 to="/contact"
                 className="nav-inactive"
                 activeClassName="nav-active"
+                onClick={onClick}
             >
                 Contact
             </NavLink>
@@ -32,6 +35,7 @@ const MenuItems = () => {
                 className="nav-inactive"
                 activeClassName="nav-active"
                 exact={true}
+                onClick={onClick}
             >
                 Add blog
             </NavLink>
