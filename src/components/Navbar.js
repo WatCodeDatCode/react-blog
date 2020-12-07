@@ -24,19 +24,19 @@ const Navbar = () => {
                     <div className="flex-1 flex items-center justify-center md:items-stretch md:justify-start">
                         <a href="/" className="flex-shrink-0 flex items-center">
                             <img
-                                className="h-12 md:h-16"
+                                className="h-12 md:h-16 hover:shadow-yellowXL rounded-full"
                                 src="/images/logo_without_text.png"
                                 alt="Gullible's Travels Logo"
                             />
-                            <h2 className="hidden md:block ml-3 mr-8 md:text-3xl lg:text-4xl font-nationalPark font-extrabold tracking-wider">
+                            <h2 className="hidden md:block ml-3 mr-8 md:text-3xl lg:text-4xl font-nationalPark font-extrabold tracking-wider hover:text-primary-500">
                                 Gullible's Travels
                             </h2>
                         </a>
                     </div>
                     <div className="flex">
                         <div className="hidden md:block md:ml-4 h-full">
-                            <div className="flex space-x-2">
-                                <MenuItems />
+                            <div className="flex">
+                                <MenuItems activeClassName="desktop-nav-active" className="desktop-nav-inactive" buttonClass="nav-button" />
                             </div>
                         </div>
                     </div>
@@ -44,7 +44,7 @@ const Navbar = () => {
                         <div className="ml-3 relative">
                             <div>
                                 <button
-                                    className="flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
+                                    className="flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white"
                                     id="user-menu"
                                     aria-haspopup="true"
                                     onClick={handleUserClick}
@@ -105,8 +105,8 @@ const Navbar = () => {
             <div
                 className={`${mobileMenuIsOpen ? 'block' : 'hidden'} md:hidden`}
             >
-                <div className="flex flex-col px-2 pt-2 pb-3 space-y-1">
-                    <MenuItems onClick={handleMobileMenuClick}/>
+                <div className="flex flex-col px-2 pt-2 pb-3">
+                    <MenuItems onClick={handleMobileMenuClick} activeClassName="mobile-nav-active" className="mobile-nav-inactive" buttonClass="mobile-nav-button"/>
                 </div>
             </div>
         </div>

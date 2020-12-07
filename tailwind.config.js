@@ -185,6 +185,8 @@ module.exports = {
                 '0 20px 25px -5px rgba(47,191,113, 0.20), 0 10px 10px -5px rgba(47,191,113, 0.50)',
             yellowXL:
                 '0 20px 25px -5px rgba(248,198,48, 0.20), 0 10px 10px -5px rgba(248,198,48, 0.50)',
+            orangeXL:
+                '0 20px 25px -5px rgba(241,118,14, 0.20), 0 10px 10px -5px rgba(241,118,14, 0.50)',
         },
         container: {},
         cursor: {

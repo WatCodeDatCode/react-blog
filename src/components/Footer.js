@@ -1,38 +1,23 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
+import MenuItems from './MenuItems'
 
 const Footer = () => {
     return (
         <div class="h-auto py-8 bg-dark-900">
-            <div class="flex justify-center">
-                <NavLink
-                    to="/"
-                    className="nav-inactive"
-                    activeClassName="nav-active"
-                    exact={true}
+            <div class="flex flex-col text-center">
+                <a href="/"
+                    className="w-16 lg:w-24 mb-6 rounded-full hover:shadow-orangeXL mx-auto"
                 >
                     <img
-                        class="h-16 lg:h-24 mb-3"
                         src="/images/logo_marker.png"
                         alt="Gullible's Travels Logo"
                     />
-                </NavLink>
-            </div>
-            <div class="flex justify-center">
-                <NavLink
-                    to="/blog"
-                    className="nav-inactive"
-                    activeClassName="nav-active"
-                >
-                    Blog
-                </NavLink>
-                <NavLink
-                    to="/contact"
-                    className="nav-inactive"
-                    activeClassName="nav-active"
-                >
-                    Contact
-                </NavLink>
+                </a>
+                <MenuItems className="footer-nav-inactive"
+                activeClassName="footer-nav-active"
+                buttonClass="footer-nav-button" 
+                />
             </div>
         </div>
     )

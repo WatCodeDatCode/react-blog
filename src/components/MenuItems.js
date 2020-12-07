@@ -1,13 +1,13 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 
-const MenuItems = ({ onClick }) => {
+const MenuItems = ({ onClick, className, activeClassName, buttonClass }) => {
     return (
         <>
             <NavLink
                 to="/"
-                className="nav-inactive"
-                activeClassName="nav-active"
+                className={className}
+                activeClassName={activeClassName}
                 exact={true}
                 onClick={onClick}
             >
@@ -15,8 +15,8 @@ const MenuItems = ({ onClick }) => {
             </NavLink>
             <NavLink
                 to="/blog"
-                className="nav-inactive"
-                activeClassName="nav-active text-primary-500"
+                className={className}
+                activeClassName={activeClassName}
                 exact={true}
                 onClick={onClick}
             >
@@ -24,16 +24,15 @@ const MenuItems = ({ onClick }) => {
             </NavLink>
             <NavLink
                 to="/contact"
-                className="nav-inactive"
-                activeClassName="nav-active"
+                className={className}
+                activeClassName={activeClassName}
                 onClick={onClick}
             >
                 Contact
             </NavLink>
             <NavLink
                 to="/blog/new"
-                className="nav-inactive"
-                activeClassName="nav-active"
+                className={buttonClass}
                 exact={true}
                 onClick={onClick}
             >
