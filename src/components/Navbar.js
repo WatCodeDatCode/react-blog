@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { NavLink } from 'react-router-dom'
+import MenuItems from './MenuItems'
 
 const Navbar = () => {
     const [mobileMenuIsOpen, setMobileMenuIsOpen] = useState(false)
@@ -16,12 +16,12 @@ const Navbar = () => {
     useEffect(() => {})
 
     return (
-        <div className="bg-secondary-500">
-            <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
+        <div className="bg-secondary-500 py-2 md:py-3">
+            <div className="max-w-7xl mx-auto px-2 md:px-6 lg:px-8">
                 <div className="relative flex items-center justify-between h-16">
-                    <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
+                    <div className="absolute inset-y-0 left-0 flex items-center md:hidden">
                         <button
-                            className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+                            className="inline-flex items-center justify-center p-2 rounded-md text-dark-800 hover:text-white hover:bg-dark-800 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
                             aria-expanded="false"
                             onClick={handleMobileMenuClick}
                         >
@@ -62,45 +62,26 @@ const Navbar = () => {
                             </svg>
                         </button>
                     </div>
-                    <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
-                        <div className="flex-shrink-0 flex items-center">
+                    <div className="flex-1 flex items-center justify-center md:items-stretch md:justify-start">
+                        <a href="/" className="flex-shrink-0 flex items-center">
                             <img
-                                className="h-12 lg:h-16"
+                                className="h-12 md:h-16"
                                 src="/images/logo_without_text.png"
                                 alt="Gullible's Travels Logo"
                             />
-                            <h2 className="hidden md:block mx-6 md:text-3xl lg:text-4xl font-nationalPark font-extrabold tracking-wider">
+                            <h2 className="hidden md:block ml-3 mr-8 md:text-3xl lg:text-4xl font-nationalPark font-extrabold tracking-wider">
                                 Gullible's Travels
                             </h2>
-                        </div>
-                        <div className="hidden sm:block sm:ml-6">
-                            <div className="flex space-x-4">
-                                <NavLink
-                                    to="/"
-                                    className="nav-inactive"
-                                    activeClassName="nav-active"
-                                    exact={true}
-                                >
-                                    Home
-                                </NavLink>
-                                <NavLink
-                                    to="/blog"
-                                    className="nav-inactive"
-                                    activeClassName="nav-active"
-                                >
-                                    Blog
-                                </NavLink>
-                                <NavLink
-                                    to="/contact"
-                                    className="nav-inactive"
-                                    activeClassName="nav-active"
-                                >
-                                    Contact
-                                </NavLink>
+                        </a>
+                    </div>
+                    <div className="flex">
+                        <div className="hidden md:block md:ml-4 h-full">
+                            <div className="flex space-x-2">
+                                <MenuItems />
                             </div>
                         </div>
                     </div>
-                    <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+                    <div className="absolute inset-y-0 right-0 flex items-center pr-2 md:static md:inset-auto md:ml-6 md:pr-0">
                         <div className="ml-3 relative">
                             <div>
                                 <button
@@ -131,28 +112,28 @@ const Navbar = () => {
                             <div
                                 className={`${
                                     userDropdownIsOpen ? 'block' : 'hidden'
-                                } z-10 origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5`}
+                                } z-10 origin-top-right absolute right-0 mt-1 w-48 rounded-md py-1 bg-dark-800 ring-1 shadow-yellowXL ring-black ring-opacity-5`}
                                 role="menu"
                                 aria-orientation="vertical"
                                 aria-labelledby="user-menu"
                             >
                                 <a
                                     href="/"
-                                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                                    className="block px-4 py-2 text-sm text-white hover:bg-dark-500"
                                     role="menuitem"
                                 >
                                     Your Profile
                                 </a>
                                 <a
                                     href="/"
-                                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                                    className="block px-4 py-2 text-sm text-white hover:bg-dark-500"
                                     role="menuitem"
                                 >
                                     Settings
                                 </a>
                                 <a
                                     href="/"
-                                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                                    className="block px-4 py-2 text-sm text-white hover:bg-dark-500"
                                     role="menuitem"
                                 >
                                     Sign out
@@ -163,31 +144,10 @@ const Navbar = () => {
                 </div>
             </div>
             <div
-                className={`${mobileMenuIsOpen ? 'block' : 'hidden'} sm:hidden`}
+                className={`${mobileMenuIsOpen ? 'block' : 'hidden'} md:hidden`}
             >
                 <div className="flex flex-col px-2 pt-2 pb-3 space-y-1">
-                    <NavLink
-                        to="/"
-                        className="nav-inactive"
-                        activeClassName="nav-active"
-                        exact={true}
-                    >
-                        Home
-                    </NavLink>
-                    <NavLink
-                        to="/blog"
-                        className="nav-inactive"
-                        activeClassName="nav-active"
-                    >
-                        Blog
-                    </NavLink>
-                    <NavLink
-                        to="/contact"
-                        className="nav-inactive"
-                        activeClassName="nav-active"
-                    >
-                        Contact
-                    </NavLink>
+                    <MenuItems />
                 </div>
             </div>
         </div>

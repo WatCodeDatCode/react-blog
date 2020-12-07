@@ -7,11 +7,11 @@
 @tailwind utilities;
 
 .nav-active {
-    @apply px-3 py-2 tracking-wider rounded-md text-2xl font-bold text-primary-500 bg-dark-900;
+    @apply font-nationalPark px-2 py-1 tracking-wider rounded-md text-xl lg:text-2xl font-bold text-primary-500 bg-dark-900 hover:bg-dark-700 focus:ring-white;
 }
 
 .nav-inactive {
-    @apply px-3 py-2 tracking-wider rounded-md text-2xl font-semibold text-gray-300 hover:text-white hover:bg-gray-700;
+    @apply font-nationalPark px-2 py-1 tracking-wider rounded-md text-xl lg:text-2xl font-semibold text-white hover:text-white hover:bg-dark-500 focus:ring-white;
 }
 
 body {
