@@ -107,12 +107,13 @@ body {
 }
 
 .loader {
-    border: 18px solid #f8f8f8;
-    border-top: 18px solid #e48b68;
-    height: 10em;
-    width: 10em;
-    border-radius: 50%;
     animation: spin 2s linear infinite;
+  /*  border: 18px solid #f8f8f8;
+    border-top: 18px solid #e48b68;
+ 
+
+    border-radius: 50%;    */
+    @apply h-40 w-40 border-t-18 border-secondary-500 rounded-full;
 }
 
 @keyframes spin {

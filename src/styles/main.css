@@ -672,6 +672,10 @@ video {
   height: 100vh;
 }
 
+.h-90vh {
+  height: 90vh;
+}
+
 .text-sm {
   font-size: 0.875rem;
   line-height: 1.25rem;
@@ -1650,12 +1654,18 @@ body {
 }
 
 .loader {
-  border: 18px solid #f8f8f8;
-  border-top: 18px solid #e48b68;
-  height: 10em;
-  width: 10em;
-  border-radius: 50%;
   animation: spin 2s linear infinite;
+  /*  border: 18px solid #f8f8f8;
+    border-top: 18px solid #e48b68;
+ 
+
+    border-radius: 50%;    */
+  --tw-border-opacity: 1;
+  border-color: rgba(241, 118, 14, var(--tw-border-opacity));
+  border-radius: 9999px;
+  border-top-width: 18px;
+  height: 10rem;
+  width: 10rem;
 }
 
 @keyframes spin {
