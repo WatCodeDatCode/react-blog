@@ -11,7 +11,7 @@
 }
 
 .desktop-nav-active {
-  @apply font-nationalPark tracking-wide text-2xl lg:text-3xl font-bold text-white transition hover:scale-105 hover:text-primary-500 focus:border-current;
+  @apply font-nationalPark tracking-wide text-2xl lg:text-3xl font-extrabold text-white transition hover:scale-105 hover:text-primary-500 focus:border-current;
 }
 
 .mobile-nav-inactive {
@@ -103,16 +103,22 @@ body {
 }
 
 .buttons-container {
-  @apply flex justify-between;
+  @apply w-full mt-6 mb-4 flex justify-end;
+}
+
+.image-overlay {
+  @apply absolute top-0 bottom-0 left-0 right-0 h-full w-full opacity-0 transition bg-dark-900 bg-opacity-60 hover:opacity-100;
+}
+
+.image-text {
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  @apply font-nationalPark text-primary-500 text-6xl font-extrabold absolute top-2/4 left-2/4 text-center;
 }
 
 .loader {
     animation: spin 2s linear infinite;
-  /*  border: 18px solid #f8f8f8;
-    border-top: 18px solid #e48b68;
- 
-
-    border-radius: 50%;    */
     @apply h-40 w-40 border-t-18 border-secondary-500 rounded-full;
 }
 

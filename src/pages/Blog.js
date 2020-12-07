@@ -28,7 +28,7 @@ const Blog = () => {
                 )
                 setEntry(response.data)
             } catch (err) {
-                setError(err)
+                setError(err.message)
             }
             setLoading(false)
         }
@@ -37,7 +37,7 @@ const Blog = () => {
     }, [id])
 
     const Map = withScriptjs(
-        withGoogleMap((props) => (
+        withGoogleMap(() => (
             <GoogleMap
                 defaultZoom={6}
                 defaultCenter={{
@@ -67,10 +67,10 @@ const Blog = () => {
                 loading ? (
                     <LoadingSpinner />
                 ) : (
-                    <Error error={error.message} />
+                    <Error error={error} />
                 )
             ) : (
-                <div className="grid lg:grid-cols-2">
+                <div className="grid lg:grid-cols-2 w-screen">
                     <BlogEntry entry={entry} />
                     <div className="map-container">
                         <Map
