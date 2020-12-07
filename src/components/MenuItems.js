@@ -16,6 +16,7 @@ const MenuItems = () => {
                 to="/blog"
                 className="nav-inactive"
                 activeClassName="nav-active text-primary-500"
+                exact={true}
             >
                 Blog
             </NavLink>
@@ -30,6 +31,7 @@ const MenuItems = () => {
                 to="/blog/new"
                 className="nav-inactive"
                 activeClassName="nav-active"
+                exact={true}
             >
                 Add blog
             </NavLink>
