@@ -1,5 +1,4 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
 import MenuItems from './MenuItems'
 
 const Footer = () => {
