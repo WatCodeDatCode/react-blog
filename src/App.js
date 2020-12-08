@@ -7,6 +7,7 @@ import Contact from './pages/Contact'
 import NewBlog from './pages/NewBlog'
 import EditBlog from './pages/EditBlog'
 import Footer from './components/Footer'
+import PageNotFound from './pages/PageNotFound'
 
 function App() {
 
@@ -20,6 +21,7 @@ function App() {
                     <Route path='/blog/:id' component={Blog} exact={true} />
                     <Route path='/blog/edit/:id' component={EditBlog} exact={true} />
                     <Route path='/contact' component={Contact} exact={true} />
+                    <Route component={PageNotFound} />
                 </Switch>
                 <Footer />
             </Router>

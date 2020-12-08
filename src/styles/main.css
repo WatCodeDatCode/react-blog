@@ -704,6 +704,10 @@ video {
   height: 40vh;
 }
 
+.h-50vh {
+  height: 50vh;
+}
+
 .h-90vh {
   height: 90vh;
 }
@@ -816,6 +820,10 @@ video {
 
 .mr-8 {
   margin-right: 2rem;
+}
+
+.mb-10 {
+  margin-bottom: 2.5rem;
 }
 
 .mb-14 {
@@ -1062,6 +1070,10 @@ video {
 
 .w-24 {
   width: 6rem;
+}
+
+.w-32 {
+  width: 8rem;
 }
 
 .w-48 {
