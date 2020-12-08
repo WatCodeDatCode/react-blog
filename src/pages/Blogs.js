@@ -76,7 +76,10 @@ const Blogs = () => {
                         }}
                     >
                         <div className="h-40vh bg-dark-500 rounded-lg text-white w-full">
-                            <a href={`/blog/${selectedEntry._id}`} className="h-40vh flex flex-col justify-between">
+                            <a
+                                href={`/blog/${selectedEntry._id}`}
+                                className="h-40vh flex flex-col justify-between"
+                            >
                                 <h2 className="font-nationalPark text-primary-500 mx-2 my-1 sm:mx-4 text-4xl font-extrabold text-center">
                                     {selectedEntry.title}
                                 </h2>
@@ -85,7 +88,9 @@ const Blogs = () => {
                                         'MMMM Do YYYY'
                                     )}
                                 </p>
-                                <p className="text-lg mx-6 my-4 whitespace-pre-line truncate">{selectedEntry.blog_text}</p>
+                                <p className="text-lg mx-6 my-4 whitespace-pre-line truncate">
+                                    {selectedEntry.blog_text}
+                                </p>
                                 <div className="w-full flex items-center md:justify-between">
                                     <img
                                         className="rounded-md self-start w-1/3 md:w-1/4 h-auto"
@@ -120,10 +125,9 @@ const Blogs = () => {
                 sorted = [...entries].sort((a, b) =>
                     a.date_visited.localeCompare(b.date_visited)
                 )
-            } else if (type === 'by_author') {
-                sorted = [...entries].sort((a, b) =>
-                    a.author.localeCompare(b.author)
-                )
+            } else {
+                sorted = [...entries].filter((entry) => {
+                    return entry.author === type})
             }
             setSortedEntries(sorted)
         }
@@ -153,8 +157,14 @@ const Blogs = () => {
                                 <option value="oldest_first">
                                     Oldest first
                                 </option>
-                                <option value="by_author">
-                                    Alphabetical by author
+                                <option value="Professor Floof">
+                                    Posts from Professor Floof
+                                </option>
+                                <option value="Chonky Chonk">
+                                    Posts from Chonky Chonk
+                                </option>
+                                <option value="Andrew Russell">
+                                    Posts from Andrew
                                 </option>
                             </select>
                             <div className="flex flex-wrap">
