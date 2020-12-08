@@ -39,7 +39,7 @@ const Blog = () => {
     const Map = withScriptjs(
         withGoogleMap(() => (
             <GoogleMap
-                defaultZoom={6}
+                defaultZoom={7}
                 defaultCenter={{
                     lat: entry.location.lat,
                     lng: entry.location.lng,

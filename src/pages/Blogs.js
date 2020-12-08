@@ -75,9 +75,9 @@ const Blogs = () => {
                             setSelectedEntry(null)
                         }}
                     >
-                        <div className="bg-dark-500 rounded-lg text-white w-full">
-                            <a href={`/blog/${selectedEntry._id}`}>
-                                <h2 className="text-primary-500 mx-2 sm:mx-4 text-2xl font-extrabold text-center">
+                        <div className="h-40vh bg-dark-500 rounded-lg text-white w-full">
+                            <a href={`/blog/${selectedEntry._id}`} className="h-40vh flex flex-col justify-between">
+                                <h2 className="font-nationalPark text-primary-500 mx-2 my-1 sm:mx-4 text-4xl font-extrabold text-center">
                                     {selectedEntry.title}
                                 </h2>
                                 <p className="mx-2 sm:mx-4 text-lg font-bold text-center">
@@ -85,6 +85,7 @@ const Blogs = () => {
                                         'MMMM Do YYYY'
                                     )}
                                 </p>
+                                <p className="text-lg mx-6 my-4 whitespace-pre-line truncate">{selectedEntry.blog_text}</p>
                                 <div className="w-full flex items-center md:justify-between">
                                     <img
                                         className="rounded-md self-start w-1/3 md:w-1/4 h-auto"
