@@ -36,7 +36,9 @@ const Blogs = () => {
             setEntries(response.data)
             setSortedEntries(response.data)
         } catch (err) {
-            setError('Problem retrieving entries. Please check your URL or try again later.')
+            setError(
+                'Problem retrieving entries. Please check your URL or try again later.'
+            )
         }
         setLoading(false)
     }
@@ -79,29 +81,29 @@ const Blogs = () => {
                             setSelectedEntry(null)
                         }}
                     >
-                        <div className="h-40vh bg-dark-500 rounded-lg text-white w-full">
+                        <div className="map-info-container">
                             <a
                                 href={`/blog/${selectedEntry._id}`}
-                                className="h-40vh flex flex-col justify-between"
+                                className="map-info-anchor"
                             >
-                                <h2 className="font-nationalPark text-primary-500 mx-2 my-1 sm:mx-4 text-4xl font-extrabold text-center">
+                                <h2 className="map-info-header">
                                     {selectedEntry.title}
                                 </h2>
-                                <p className="mx-2 sm:mx-4 text-lg font-bold text-center">
+                                <p className="map-info-date">
                                     {moment(selectedEntry.date_visited).format(
                                         'MMMM Do YYYY'
                                     )}
                                 </p>
-                                <p className="text-lg mx-6 my-4 whitespace-pre-line truncate">
+                                <p className="map-info-text">
                                     {selectedEntry.blog_text}
                                 </p>
-                                <div className="w-full flex items-center md:justify-between">
+                                <div className="map-info-author-container">
                                     <img
-                                        className="rounded-md self-start w-1/3 md:w-1/4 h-auto"
+                                        className="map-info-author-image"
                                         src={selectedEntry.author_img}
                                         alt={`${selectedEntry.city}, ${selectedEntry.country}`}
                                     />
-                                    <p className="mx-auto text-2xl lg:text-lg xl:text-2xl font-bold flex flex-wrap">
+                                    <p className="map-info-author">
                                         {selectedEntry.author}
                                     </p>
                                 </div>
@@ -172,11 +174,14 @@ const Blogs = () => {
                     />
                 )
             ) : (
-                <div className="grid lg:grid-cols-2">
-                    <div className="">
-                        <div>
+                <div className="blog-grid-container">
+                    <div>
+                        <div className="select-container">
+                            <p className="select-text">
+                                Filter:
+                            </p>
                             <select
-                                className="text-dark-600"
+                                className="select-dropdown"
                                 onChange={(event) =>
                                     setSortBy(event.target.value)
                                 }
@@ -192,13 +197,14 @@ const Blogs = () => {
                                         </option>
                                     ))}
                             </select>
-                            <div className="flex flex-wrap">
-                                {sortedEntries.map((entry) => (
-                                    <BlogCard entry={entry} />
-                                ))}
-                            </div>
+                        </div>
+                        <div className="flex flex-wrap justify-around">
+                            {sortedEntries.map((entry) => (
+                                <BlogCard entry={entry} />
+                            ))}
                         </div>
                     </div>
+
                     <div className="map-container">
                         <Map
                             isMarkerShown

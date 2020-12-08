@@ -36,7 +36,11 @@ const Navbar = () => {
                     <div className="flex">
                         <div className="desktop-nav-container">
                             <div className="flex">
-                                <MenuItems activeClassName="desktop-nav-active" className="desktop-nav-inactive" buttonClass="nav-button" />
+                                <MenuItems
+                                    activeClassName="desktop-nav-active"
+                                    className="desktop-nav-inactive"
+                                    buttonClass="nav-button"
+                                />
                             </div>
                         </div>
                     </div>
@@ -106,7 +110,12 @@ const Navbar = () => {
                 className={`${mobileMenuIsOpen ? 'block' : 'hidden'} md:hidden`}
             >
                 <div className="mobile-nav-container">
-                    <MenuItems onClick={handleMobileMenuClick} activeClassName="mobile-nav-active" className="mobile-nav-inactive" buttonClass="mobile-nav-button"/>
+                    <MenuItems
+                        onClick={handleMobileMenuClick}
+                        activeClassName="mobile-nav-active"
+                        className="mobile-nav-inactive"
+                        buttonClass="mobile-nav-button"
+                    />
                 </div>
             </div>
         </div>

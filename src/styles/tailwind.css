@@ -31,7 +31,7 @@
 }
 
 .header-company-name {
-  @apply hidden md:block ml-3 mr-8 md:text-3xl lg:text-4xl font-nationalPark font-extrabold tracking-wider hover:text-primary-500;
+  @apply hidden md:block ml-3 mr-8 md:text-2xl lg:text-4xl font-nationalPark font-extrabold tracking-wider hover:text-primary-500;
 }
 
 .desktop-nav-container {
@@ -90,6 +90,50 @@
   @apply block px-4 py-2 text-sm text-white hover:bg-dark-500;
 }
 
+.map-info-container {
+  @apply h-40vh bg-dark-500 rounded-lg text-white w-full;
+}
+
+.map-info-anchor {
+  @apply h-40vh flex flex-col justify-between;
+}
+
+.map-info-header {
+  @apply font-nationalPark text-primary-500 mx-2 my-1 sm:mx-4 text-4xl font-extrabold text-center;
+}
+
+.map-info-date {
+  @apply mx-2 sm:mx-4 text-lg font-bold text-center;
+}
+
+.map-info-text {
+  @apply text-lg mx-6 my-4 whitespace-pre-line truncate;
+}
+
+.map-info-author-container {
+  @apply w-full flex items-center md:justify-between;
+}
+
+.map-info-author-image {
+  @apply rounded-md self-start w-1/3 md:w-1/4 h-auto;
+}
+
+.map-info-author {
+  @apply mx-auto text-2xl lg:text-lg xl:text-2xl font-bold flex flex-wrap;
+}
+
+.footer {
+  @apply h-auto py-8 bg-dark-900;
+}
+
+.footer-container {
+  @apply flex flex-col text-center;
+}
+
+.footer-logo-anchor {
+  @apply w-16 lg:w-24 mb-6 rounded-full hover:shadow-orangeXL mx-auto;
+}
+
 .footer-nav-button {
   @apply mx-auto max-w-lg font-nationalPark px-2 py-1 tracking-wider rounded-md text-2xl lg:text-3xl font-bold bg-primary-500 hover:bg-secondary-500 hover:shadow-orangeXL focus:ring-offset-2 focus:ring-white text-dark-900 hover:text-white;
 }
@@ -122,16 +166,28 @@ body {
     @apply block appearance-none outline-none w-full bg-dark-400 border text-white py-3 px-4 pr-8 leading-tight rounded;
 }
 
+.select-container {
+  @apply flex w-full content-center justify-end mb-2 lg:mb-4 mt-4 lg:mt-10;
+}
+
+.select-text {
+  @apply mx-1 text-xl xl:text-2xl font-nationalPark text-secondary-500 tracking-wider font-extrabold;
+}
+
+.select-dropdown {
+  @apply mr-6 md:mr-10 lg:mr-8 xl:mr-10 py-1 px-2 bg-primary-500 text-dark-900 rounded-md font-nationalPark;
+}
+
 .blog-card {
-    @apply bg-dark-500 text-white w-auto md:w-2/5 rounded-lg overflow-hidden mx-4 md:mx-auto my-4 sm:my-6 lg:my-10 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-105 shadow-yellow hover:shadow-yellowXL;
+  @apply bg-dark-500 w-full h-full relative md:w-2/5 lg:w-auto xl:w-2/5 rounded-lg overflow-hidden mx-6 md:mx-auto xl:mx-8 mb-4 sm:mb-6 lg:mb-14 transition duration-200 ease-in-out transform hover:-translate-y-1 hover:scale-105 shadow-yellow hover:shadow-yellowXL;
 }
 
 .card-content-container {
-  @apply h-60vh flex flex-col justify-between;
+  @apply h-full relative flex flex-col justify-between;
 }
 
 .card-image {
-  @apply w-auto h-1/2 object-center object-cover;
+  @apply w-auto h-30vh object-center object-cover;
 }
 
 .card-title-container {
@@ -139,11 +195,11 @@ body {
 }
 
 .card-title {
-  @apply text-primary-500 mx-2 sm:mx-4 text-4xl font-nationalPark tracking-wide font-extrabold text-center;
+  @apply flex-grow text-primary-500 mx-2 sm:mx-4 text-4xl font-nationalPark tracking-wide font-extrabold text-center;
 }
 
 .card-date-container {
-  @apply my-3 md:my-6 flex flex-row flex-wrap justify-evenly items-center;
+  @apply my-6 md:my-10 flex flex-row flex-wrap justify-evenly items-center;
 }
 
 .card-date {
@@ -151,15 +207,15 @@ body {
 }
 
 .card-author-container {
-  @apply h-10vh w-full flex items-center md:justify-between;
+  @apply relative h-full w-full mt-auto flex items-center md:justify-between;
 }
 
 .card-author-img {
-  @apply rounded-md self-start w-1/3 md:w-1/4 h-auto object-cover object-center;
+  @apply block rounded-md self-start w-1/3 md:w-1/4 lg:w-1/3 xl:w-1/4 h-auto object-cover object-center;
 }
 
 .card-author-name {
-  @apply mx-auto text-2xl lg:text-lg xl:text-2xl font-bold flex flex-wrap;
+  @apply mx-auto text-2xl lg:text-lg xl:text-2xl font-bold font-nationalPark flex flex-wrap;
 }
 
 .cta-button {

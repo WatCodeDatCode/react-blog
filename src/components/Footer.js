@@ -3,10 +3,10 @@ import MenuItems from './MenuItems'
 
 const Footer = () => {
     return (
-        <div className="h-auto py-8 bg-dark-900">
-            <div className="flex flex-col text-center">
+        <div className="footer">
+            <div className="footer-container">
                 <a href="/"
-                    className="w-16 lg:w-24 mb-6 rounded-full hover:shadow-orangeXL mx-auto"
+                    className="footer-logo-anchor"
                 >
                     <img
                         src="/images/logo_marker.png"
