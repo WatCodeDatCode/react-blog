@@ -21,6 +21,7 @@ const Blogs = () => {
 
     const [sortedEntries, setSortedEntries] = useState([])
     const [sortBy, setSortBy] = useState('most_recent')
+    const [authors, setAuthors] = useState(null)
 
     const fetchEntries = async () => {
         try {
@@ -114,6 +115,17 @@ const Blogs = () => {
     }, [])
 
     useEffect(() => {
+        const getAuthors = () => {
+            let authorData = []
+            for (let i = 0; i < entries.length; i++) {
+                authorData.push(entries[i].author)
+            }
+            let uniqueAuthors = [...new Set(authorData)]
+            setAuthors(uniqueAuthors)
+        }
+
+        getAuthors()
+
         const sortEntries = (type) => {
             let sorted
 
@@ -126,10 +138,13 @@ const Blogs = () => {
                     a.date_visited.localeCompare(b.date_visited)
                 )
             } else {
-                sorted = [...entries].filter((entry) => {
-                    return entry.author === type}).sort((a, b) =>
-                    b.date_visited.localeCompare(a.date_visited)
-                )
+                sorted = [...entries]
+                    .filter((entry) => {
+                        return entry.author === type
+                    })
+                    .sort((a, b) =>
+                        b.date_visited.localeCompare(a.date_visited)
+                    )
             }
             setSortedEntries(sorted)
         }
@@ -159,15 +174,12 @@ const Blogs = () => {
                                 <option value="oldest_first">
                                     Oldest first
                                 </option>
-                                <option value="Professor Floof">
-                                    Posts from Professor Floof
-                                </option>
-                                <option value="Chonky Chonk">
-                                    Posts from Chonky Chonk
-                                </option>
-                                <option value="Andrew Russell">
-                                    Posts from Andrew
-                                </option>
+                                {authors &&
+                                    authors.map((author) => (
+                                        <option value={author}>
+                                            Posts from {author}
+                                        </option>
+                                    ))}
                             </select>
                             <div className="flex flex-wrap">
                                 {sortedEntries.map((entry) => (
