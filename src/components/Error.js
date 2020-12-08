@@ -5,13 +5,12 @@ const Error = ({ error }) => {
         <div className="h-screen w-full flex flex-col justify-center content-between">
             <div className="mx-auto">
                 <img
-                    className="h-auto"
+                    className="h-40vh lg:h-50vh w-auto"
                     src="/images/error/gandalf-errorpage.png"
                     alt="You shall not pass!"
                 />
             </div>
-            <br></br>
-            <p className="text-center mx-24 font-nationalPark text-4xl m-16">
+            <p className="text-center mx-10 font-nationalPark text-4xl m-10">
                 {error}
             </p>
         </div>
