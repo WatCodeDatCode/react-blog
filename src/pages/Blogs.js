@@ -127,7 +127,9 @@ const Blogs = () => {
                 )
             } else {
                 sorted = [...entries].filter((entry) => {
-                    return entry.author === type})
+                    return entry.author === type}).sort((a, b) =>
+                    b.date_visited.localeCompare(a.date_visited)
+                )
             }
             setSortedEntries(sorted)
         }
