@@ -28,7 +28,8 @@ const Blog = () => {
                 )
                 setEntry(response.data)
             } catch (err) {
-                setError(err.message)
+                setError('No entry found with that ID. Please double check your query or try again later.')
+                console.log(err)
             }
             setLoading(false)
         }

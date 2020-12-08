@@ -33,7 +33,7 @@ const Blogs = () => {
             setEntries(response.data)
             setSortedEntries(response.data)
         } catch (err) {
-            setError(err)
+            setError('Problem retrieving entries. Please check your URL or try again later.')
         }
         setLoading(false)
     }
@@ -158,7 +158,7 @@ const Blogs = () => {
                 loading ? (
                     <LoadingSpinner />
                 ) : (
-                    <Error error={error.message} />
+                    <Error error={error} />
                 )
             ) : (
                 <div className="grid lg:grid-cols-2">
@@ -177,7 +177,7 @@ const Blogs = () => {
                                 {authors &&
                                     authors.map((author) => (
                                         <option value={author}>
-                                            Posts from {author}
+                                            By {author}
                                         </option>
                                     ))}
                             </select>

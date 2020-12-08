@@ -35,7 +35,6 @@ const NewBlog = () => {
     const changeCountry = (event) => {
         const value = event.currentTarget.value
         setCountry(value)
-        console.log(country)
     }
 
     const changeDateVisited = (event) => {
@@ -65,9 +64,9 @@ const NewBlog = () => {
 
     const postData = async () => {
         setLoading(true)
-        setError(null)
-        await Geocode.fromAddress(`${city},${country}`).then((response) => {
-            const { lat, lng } = response.results[0].geometry.location
+        await Geocode.fromAddress(`${city},${country}`).then(
+            (response) => {
+                const { lat, lng } = response.results[0].geometry.location
                 axios
                     .post('https://travel-blogs-api.herokuapp.com/blogs', {
                         title,
@@ -81,19 +80,28 @@ const NewBlog = () => {
                         lat,
                         lng,
                     })
-                    .catch((err) => {
-                        setError(err)
-                        console.error(err)
-                    })
-                    .then((response) => {
-                        const data = response.data
-                        console.log(data)
-                        history.push('/blog')
-                    })
-        }).catch((err) => {
-            setLoading(false)
-            setError(err)
-        })
+                    .then(
+                        (response) => {
+                            const data = response.data
+                            console.log(data)
+                            history.push('/blog')
+                        },
+                        (err) => {
+                            setError(
+                                'We could not enter your data to the server. Please try again later.'
+                            )
+                            console.error(err)
+                        }
+                    )
+            },
+            (err) => {
+                setError(
+                    'Destination does not seem to exist, please check that you entered the correct country and city.'
+                )
+                console.error(err)
+            }
+        )
+        setLoading(false)
     }
 
     const handleSubmit = async (event) => {
@@ -107,7 +115,7 @@ const NewBlog = () => {
                 loading ? (
                     <LoadingSpinner />
                 ) : (
-                    <Error error={error.message} />
+                    <Error error={error} />
                 )
             ) : (
                 <div className="w-full sm:w-1/2 flex flex-col mx-auto">
