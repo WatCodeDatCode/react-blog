@@ -11,6 +11,7 @@ import {
     Marker,
 } from 'react-google-maps'
 import mapStyle from '../components/styles/mapStyle'
+import { useHistory } from 'react-router-dom'
 
 const Blog = () => {
     const [entry, setEntry] = useState({})
@@ -18,8 +19,10 @@ const Blog = () => {
     const [error, setError] = useState(null)
     const { id } = useParams()
 
+    let history = useHistory()
+
     const handleRemoveErrorButton = () => {
-        setError(false)
+        history.push('/blog')
     }
 
     useEffect(() => {
