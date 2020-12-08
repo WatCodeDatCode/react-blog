@@ -3,8 +3,8 @@ import MenuItems from './MenuItems'
 
 const Footer = () => {
     return (
-        <div class="h-auto py-8 bg-dark-900">
-            <div class="flex flex-col text-center">
+        <div className="h-auto py-8 bg-dark-900">
+            <div className="flex flex-col text-center">
                 <a href="/"
                     className="w-16 lg:w-24 mb-6 rounded-full hover:shadow-orangeXL mx-auto"
                 >
