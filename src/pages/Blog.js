@@ -84,7 +84,7 @@ const Blog = () => {
                     />
                 )
             ) : (
-                <div className="grid lg:grid-cols-2 w-screen">
+                <div className="blog-grid-container">
                     <BlogEntry entry={entry} />
                     <div className="map-container">
                         <Map

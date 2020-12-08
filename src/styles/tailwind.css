@@ -6,6 +6,38 @@
 @tailwind components;
 @tailwind utilities;
 
+.header {
+  @apply bg-secondary-500 py-2 md:py-3;
+}
+
+.header-desktop-container {
+  @apply max-w-7xl mx-auto px-2 md:px-6 lg:px-8;
+}
+
+.header-nav-container {
+  @apply relative flex items-center justify-between h-16;
+}
+
+.header-company-container {
+  @apply flex-1 flex items-center justify-center md:items-stretch md:justify-start;
+}
+
+.header-company-anchor {
+  @apply flex-shrink-0 flex items-center;
+}
+
+.header-company-logo {
+  @apply h-12 md:h-16 hover:shadow-yellowXL rounded-full;
+}
+
+.header-company-name {
+  @apply hidden md:block ml-3 mr-8 md:text-3xl lg:text-4xl font-nationalPark font-extrabold tracking-wider hover:text-primary-500;
+}
+
+.desktop-nav-container {
+  @apply hidden md:block md:ml-4 h-full;
+}
+
 .desktop-nav-inactive {
   @apply mr-3 lg:mr-8 font-nationalPark tracking-wide text-2xl lg:text-3xl font-extrabold text-dark-900 transition hover:scale-105 hover:text-primary-500 focus:border-current;
 }
@@ -22,12 +54,40 @@
   @apply w-auto text-white font-nationalPark tracking-wide text-2xl font-bold hover:text-primary-500 focus:ring-white;
 }
 
+.mobile-nav-container {
+  @apply flex flex-col px-2 pt-2 pb-3;
+}
+
 .nav-button {
   @apply mx-auto max-w-lg font-nationalPark px-2 py-1 tracking-wider rounded-md text-2xl lg:text-3xl font-bold bg-dark-900 hover:bg-primary-500 focus:ring-offset-2 focus:ring-white text-primary-500 hover:text-dark-900 hover:shadow-yellowXL;
 }
 
 .mobile-nav-button {
   @apply max-w-lg font-nationalPark px-2 py-1 tracking-wider rounded-md text-2xl lg:text-3xl font-bold bg-dark-900 hover:bg-primary-500 focus:ring-offset-2 focus:ring-white text-primary-500 hover:text-dark-900 hover:shadow-yellowXL;
+}
+
+.user-nav-container {
+  @apply absolute inset-y-0 right-0 flex items-center pr-2 md:static md:inset-auto md:ml-6 md:pr-0;
+}
+
+.user-menu-container {
+  @apply ml-3 relative;
+}
+
+.user-button {
+  @apply flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white;
+}
+
+.user-icon {
+  @apply h-10 w-10 text-dark-800 hover:text-white;
+}
+
+.user-menu {
+  @apply z-10 origin-top-right absolute right-0 mt-1 w-48 rounded-md py-1 bg-dark-800 ring-1 shadow-yellowXL ring-black ring-opacity-5;
+}
+
+.user-menu-item {
+  @apply block px-4 py-2 text-sm text-white hover:bg-dark-500;
 }
 
 .footer-nav-button {
@@ -102,6 +162,26 @@ body {
   @apply mx-auto text-2xl lg:text-lg xl:text-2xl font-bold flex flex-wrap;
 }
 
+.cta-button {
+  @apply text-center w-32 mx-auto font-nationalPark px-1 py-1 tracking-wide text-lg bg-primary-500 hover:bg-secondary-500 hover:shadow-orangeXL focus:ring-offset-2 focus:ring-white text-dark-900 hover:text-white;
+}
+
+.error-text {
+  @apply text-center font-nationalPark text-2xl md:text-4xl m-4 md:m-8;
+}
+
+.error-image {
+  @apply h-50vh lg:h-50vh w-auto;
+}
+
+.error-header-text {
+  @apply text-primary-500 text-center font-nationalPark text-4xl md:text-6xl mb-6 md:mb-8;
+}
+
+.error-container {
+  @apply h-screen w-full flex flex-col justify-center content-between;
+}
+
 .buttons-container {
   @apply w-full mt-6 mb-4 flex justify-between;
 }
@@ -115,6 +195,14 @@ body {
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   @apply font-nationalPark text-primary-500 text-6xl font-extrabold absolute top-2/4 left-2/4 text-center;
+}
+
+.blog-grid-container {
+  @apply grid lg:grid-cols-2 w-screen;
+}
+
+.loader-container {
+  @apply h-90vh flex justify-center items-center;
 }
 
 .loader {
