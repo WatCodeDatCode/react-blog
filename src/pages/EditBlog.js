@@ -117,6 +117,15 @@ const NewBlog = () => {
         await patchData()
     }
 
+    const handleRemoveErrorButton = () => {
+        error ===
+            'Destination does not seem to exist, please check that you entered the correct country and city.' ||
+        error ===
+            'We could not enter your data to the server. Please try again later.'
+            ? setError(false)
+            : history.push('/')
+    }
+
     useEffect(() => {
         const fetchEntry = async () => {
             try {
@@ -137,8 +146,10 @@ const NewBlog = () => {
                 setPlaceImg(response.data.place_img)
                 setBlogText(response.data.blog_text)
             } catch (err) {
-             console.error(err)
-                setError('No entry with that ID found. Please check your query or try again later.')
+                console.error(err)
+                setError(
+                    'No entry with that ID found. Please check your query or try again later.'
+                )
             }
             setLoading(false)
         }
@@ -151,7 +162,11 @@ const NewBlog = () => {
                 loading ? (
                     <LoadingSpinner />
                 ) : (
-                    <Error error={error} />
+                    <Error
+                        error={error}
+                        buttonText="Go back"
+                        onClick={handleRemoveErrorButton}
+                    />
                 )
             ) : (
                 <div className="w-full sm:w-1/2 flex flex-col mx-auto">

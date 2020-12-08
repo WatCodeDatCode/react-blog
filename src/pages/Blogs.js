@@ -12,6 +12,7 @@ import {
 } from 'react-google-maps'
 import moment from 'moment'
 import mapStyle from '../components/styles/mapStyle'
+import { useHistory } from 'react-router-dom'
 
 const Blogs = () => {
     const [entries, setEntries] = useState([])
@@ -22,6 +23,8 @@ const Blogs = () => {
     const [sortedEntries, setSortedEntries] = useState([])
     const [sortBy, setSortBy] = useState('most_recent')
     const [authors, setAuthors] = useState(null)
+
+    let history = useHistory()
 
     const fetchEntries = async () => {
         try {
@@ -110,6 +113,10 @@ const Blogs = () => {
         ))
     )
 
+    const handleRemoveErrorButton = () => {
+        history.push('/')
+    }
+
     useEffect(() => {
         fetchEntries()
     }, [])
@@ -158,7 +165,11 @@ const Blogs = () => {
                 loading ? (
                     <LoadingSpinner />
                 ) : (
-                    <Error error={error} />
+                    <Error
+                        error={error}
+                        buttonText="Return home"
+                        onClick={handleRemoveErrorButton}
+                    />
                 )
             ) : (
                 <div className="grid lg:grid-cols-2">

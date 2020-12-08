@@ -104,6 +104,10 @@ const NewBlog = () => {
         setLoading(false)
     }
 
+    const handleRemoveErrorButton = () => {
+        setError(false)
+    }
+
     const handleSubmit = async (event) => {
         event.preventDefault()
         await postData()
@@ -115,7 +119,7 @@ const NewBlog = () => {
                 loading ? (
                     <LoadingSpinner />
                 ) : (
-                    <Error error={error} />
+                    <Error error={error} buttonText="Go back" onClick={handleRemoveErrorButton} />
                 )
             ) : (
                 <div className="w-full sm:w-1/2 flex flex-col mx-auto">

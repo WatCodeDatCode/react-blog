@@ -18,6 +18,10 @@ const Blog = () => {
     const [error, setError] = useState(null)
     const { id } = useParams()
 
+    const handleRemoveErrorButton = () => {
+        setError(false)
+    }
+
     useEffect(() => {
         const fetchEntry = async () => {
             try {
@@ -28,7 +32,9 @@ const Blog = () => {
                 )
                 setEntry(response.data)
             } catch (err) {
-                setError('No entry found with that ID. Please double check your query or try again later.')
+                setError(
+                    'No entry found with that ID. Please double check your query or try again later.'
+                )
                 console.log(err)
             }
             setLoading(false)
@@ -68,7 +74,11 @@ const Blog = () => {
                 loading ? (
                     <LoadingSpinner />
                 ) : (
-                    <Error error={error} />
+                    <Error
+                        error={error}
+                        buttonText="Go back"
+                        onClick={handleRemoveErrorButton}
+                    />
                 )
             ) : (
                 <div className="grid lg:grid-cols-2 w-screen">
