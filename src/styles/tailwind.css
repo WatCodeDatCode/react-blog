@@ -6,6 +6,25 @@
 @tailwind components;
 @tailwind utilities;
 
+.hero-image {
+  @apply h-90vh w-full;
+}
+
+.hero-overlay {
+  @apply absolute top-0 bottom-0 left-0 right-0 h-full w-full transition bg-dark-900 bg-opacity-50;
+}
+
+.hero-text {
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  @apply font-nationalPark absolute top-2/4 left-2/4 text-center;
+}
+
+.cta-hero {
+  @apply text-center mx-4 font-nationalPark uppercase tracking-wide py-3 px-4 rounded-xl text-3xl md:text-4xl lg:text-5xl focus:ring-offset-2 focus:ring-white text-white hover:text-secondary-500 hover:shadow-orangeXL;
+}
+
 .header {
   @apply bg-secondary-500 py-2 md:py-3;
 }

@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import Navbar from './components/Navbar'
+import Home from './pages/Home'
 import Blogs from './pages/Blogs'
 import Blog from './pages/Blog'
 import Contact from './pages/Contact'
@@ -17,7 +18,7 @@ function App() {
             <Fragment>
                 <ScrollToTop>
                     <Switch>
-                        <Route path="/" exact={true} />
+                        <Route path="/" component={Home} exact={true} />
                         <Route path="/blog" component={Blogs} exact={true} />
                         <Route
                             path="/blog/new"
