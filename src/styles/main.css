@@ -842,15 +842,6 @@ video {
   line-height: 2.25rem;
   margin-left: 1rem;
   margin-right: 1rem;
-  padding-top: 0.75rem;
-  padding-bottom: 0.75rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
-}
-
-.cta-hero:hover {
-  --tw-shadow: 0 20px 25px -5px rgba(241,118,14, 0.20), 0 10px 10px -5px rgba(241,118,14, 0.50);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
 .cta-hero:focus {
@@ -887,6 +878,10 @@ video {
     font-size: 3rem;
     line-height: 1;
   }
+}
+
+.cta-hero:hover {
+  text-shadow: 0px 0px 15px #F1760E;
 }
 
 .header {
