@@ -141,6 +141,71 @@
   @apply mx-auto text-2xl lg:text-lg xl:text-2xl font-bold flex flex-wrap;
 }
 
+.flexwrap-container {
+  @apply flex flex-wrap;
+}
+
+.blog-image-container {
+  @apply flex h-auto relative justify-center mt-8 xl:mt-10 mx-6 xl:mx-10;
+}
+
+.blog-image {
+  @apply max-w-full rounded-lg block mx-auto;
+}
+
+.back-arrow-container {
+  @apply text-secondary-500 hover:text-white transform hover:scale-105;
+}
+
+.back-arrow {
+  @apply w-24 h-12 xl:ml-4;
+}
+
+.edit-button {
+  @apply mr-6 max-w-md font-nationalPark px-1 py-1 tracking-wide text-lg bg-primary-500 hover:bg-secondary-500 hover:shadow-orangeXL focus:ring-offset-2 focus:ring-white text-dark-900 hover:text-white;
+}
+
+.blog-entry-container {
+  @apply mx-6 lg:mx-10 mb-14;
+}
+
+.delete-button {
+  @apply mr-6 lg:mr-10 max-w-md font-nationalPark px-1 py-1 tracking-wide text-lg bg-red-500 hover:bg-dark-900 focus:ring-offset-2 focus:ring-white text-white hover:text-red-500;
+}
+
+.blog-title {
+  @apply font-nationalPark text-4xl xl:text-5xl font-extrabold tracking-wide text-primary-500 mb-6;
+}
+
+.blog-heading-container {
+  @apply sm:flex sm:justify-between content-center;
+}
+
+.blog-date {
+  @apply font-nationalPark tracking-wide flex-shrink-0 sm:text-2xl my-auto sm:ml-4 font-extrabold;
+}
+
+.blog-author-container {
+  @apply  sm:flex mt-4 sm:mt-0 sm:justify-end sm:content-center sm:items-center;
+}
+
+
+.blog-author-image {
+  @apply block relative rounded-lg sm:ml-2 sm:mr-4 my-auto object-cover w-4/12 sm:w-2/12 h-auto;
+}
+
+.blog-author-name {
+  @apply font-nationalPark tracking-wide font-bold text-lg sm:text-2xl sm:mr-4 mt-3 sm:mt-0;
+}
+
+.blog-text {
+  @apply whitespace-pre-wrap mt-8 leading-relaxed text-lg;
+}
+
+.blog-published-date {
+  @apply mt-8 text-base italic;
+}
+
 .footer {
   @apply h-auto py-8 bg-dark-900;
 }
