@@ -580,28 +580,12 @@ video {
   align-items: center;
 }
 
-.content-center {
-  align-content: center;
-}
-
 .justify-center {
   justify-content: center;
 }
 
-.justify-between {
-  justify-content: space-between;
-}
-
 .justify-around {
   justify-content: space-around;
-}
-
-.font-bold {
-  font-weight: 700;
-}
-
-.font-extrabold {
-  font-weight: 800;
 }
 
 .h-6 {
@@ -612,19 +596,9 @@ video {
   height: 3rem;
 }
 
-.text-3xl {
-  font-size: 1.875rem;
-  line-height: 2.25rem;
-}
-
 .text-4xl {
   font-size: 2.25rem;
   line-height: 2.5rem;
-}
-
-.text-5xl {
-  font-size: 3rem;
-  line-height: 1;
 }
 
 .text-6xl {
@@ -652,24 +626,8 @@ video {
   margin-right: -0.75rem;
 }
 
-.mt-6 {
-  margin-top: 1.5rem;
-}
-
 .mb-6 {
   margin-bottom: 1.5rem;
-}
-
-.mt-16 {
-  margin-top: 4rem;
-}
-
-.object-cover {
-  object-fit: cover;
-}
-
-.opacity-80 {
-  opacity: 0.8;
 }
 
 .focus\:outline-none:focus {
@@ -750,11 +708,6 @@ video {
   color: rgba(248, 198, 48, var(--tw-text-opacity));
 }
 
-.text-secondary-500 {
-  --tw-text-opacity: 1;
-  color: rgba(241, 118, 14, var(--tw-text-opacity));
-}
-
 .hover\:text-white:hover {
   --tw-text-opacity: 1;
   color: rgba(255, 255, 255, var(--tw-text-opacity));
@@ -807,6 +760,8 @@ video {
 
 .hero-image {
   height: 90vh;
+  object-fit: cover;
+  opacity: 0.8;
   width: 100%;
 }
 
@@ -833,6 +788,54 @@ video {
   top: 50%;
   left: 50%;
   text-align: center;
+}
+
+.hero-text-header {
+  font-weight: 800;
+  font-size: 3rem;
+  line-height: 1;
+  --tw-text-opacity: 1;
+  color: rgba(248, 198, 48, var(--tw-text-opacity));
+}
+
+@media (min-width: 768px) {
+  .hero-text-header {
+    font-size: 3.75rem;
+    line-height: 1;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-text-header {
+    font-size: 4.5rem;
+    line-height: 1;
+  }
+}
+
+.hero-header-span {
+  display: block;
+  font-weight: 700;
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  margin-top: 1.5rem;
+  --tw-text-opacity: 1;
+  color: rgba(241, 118, 14, var(--tw-text-opacity));
+}
+
+@media (min-width: 768px) {
+  .hero-header-span {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
+}
+
+.hero-cta-container {
+  display: flex;
+  align-content: center;
+  justify-content: space-between;
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+  margin-top: 4rem;
 }
 
 .cta-hero {
@@ -2517,16 +2520,6 @@ body {
     display: none;
   }
 
-  .md\:text-4xl {
-    font-size: 2.25rem;
-    line-height: 2.5rem;
-  }
-
-  .md\:text-6xl {
-    font-size: 3.75rem;
-    line-height: 1;
-  }
-
   .md\:mb-0 {
     margin-bottom: 0px;
   }
@@ -2535,11 +2528,6 @@ body {
 @media (min-width: 1024px) {
   .lg\:h-auto {
     height: auto;
-  }
-
-  .lg\:text-7xl {
-    font-size: 4.5rem;
-    line-height: 1;
   }
 }
 

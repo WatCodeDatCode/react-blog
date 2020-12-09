@@ -7,7 +7,7 @@
 @tailwind utilities;
 
 .hero-image {
-    @apply h-90vh w-full;
+    @apply h-90vh w-full object-cover opacity-80;
 }
 
 .hero-overlay {
@@ -19,6 +19,18 @@
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     @apply font-nationalPark absolute top-2/4 left-2/4 text-center;
+}
+
+.hero-text-header {
+  @apply text-primary-500 text-5xl md:text-6xl lg:text-7xl font-extrabold;
+}
+
+.hero-header-span {
+  @apply text-secondary-500 text-3xl md:text-4xl font-bold block mt-6;
+}
+
+.hero-cta-container {
+  @apply flex mt-16 justify-between content-center text-4xl;
 }
 
 .cta-hero {
