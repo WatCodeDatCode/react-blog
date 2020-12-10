@@ -630,6 +630,10 @@ video {
   margin-bottom: 1.5rem;
 }
 
+.mb-10 {
+  margin-bottom: 2.5rem;
+}
+
 .focus\:outline-none:focus {
   outline: 2px solid transparent;
   outline-offset: 2px;
@@ -725,6 +729,10 @@ video {
 
 .w-full {
   width: 100%;
+}
+
+.w-screen {
+  width: 100vw;
 }
 
 @keyframes spin {
@@ -2025,6 +2033,16 @@ body {
   width: 100%;
 }
 
+.form-textarea {
+  height: 10rem;
+}
+
+@media (min-width: 768px) {
+  .form-textarea {
+    height: 20rem;
+  }
+}
+
 .select-container {
   display: flex;
   align-content: center;
@@ -2523,6 +2541,10 @@ body {
   .md\:mb-0 {
     margin-bottom: 0px;
   }
+
+  .md\:w-2\/3 {
+    width: 66.666667%;
+  }
 }
 
 @media (min-width: 1024px) {
@@ -2532,6 +2554,9 @@ body {
 }
 
 @media (min-width: 1280px) {
+  .xl\:w-2\/4 {
+    width: 50%;
+  }
 }
 
 @media (min-width: 1536px) {

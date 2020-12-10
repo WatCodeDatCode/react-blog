@@ -265,6 +265,10 @@ body {
     @apply block appearance-none outline-none w-full bg-dark-400 border text-white py-3 px-4 pr-8 leading-tight rounded;
 }
 
+.form-textarea {
+  @apply h-40 md:h-80;
+}
+
 .select-container {
     @apply flex w-full content-center justify-end mb-2 lg:mb-4 mt-4 lg:mt-10;
 }
