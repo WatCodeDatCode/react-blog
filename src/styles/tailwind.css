@@ -389,7 +389,7 @@ body {
 }
 
 .blog-grid-container {
-    @apply grid lg:grid-cols-2 w-screen;
+    @apply grid lg:grid-cols-2 w-full;
 }
 
 .loader-container {

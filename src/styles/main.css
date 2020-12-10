@@ -2550,7 +2550,7 @@ body {
 
 .blog-grid-container {
   display: grid;
-  width: 100vw;
+  width: 100%;
 }
 
 @media (min-width: 1024px) {
