@@ -245,6 +245,34 @@
     @apply w-auto text-primary-500 font-nationalPark mb-3 tracking-wider text-2xl lg:text-3xl font-bold hover:text-secondary-500 focus:ring-white;
 }
 
+.form-flex-container {
+  @apply flex flex-wrap -mx-3 mb-6;
+}
+
+.form-page-container {
+  @apply w-full flex flex-wrap justify-center;
+}
+
+.page-header {
+  @apply text-center w-screen text-5xl md:text-7xl font-extrabold font-nationalPark text-primary-500 my-2 sm:my-6;
+}
+
+.form-container {
+  @apply -mx-3 mb-6;
+}
+
+.form-container-input {
+  @apply w-full px-3 mb-6;
+}
+
+.form-input-first {
+  @apply w-full sm:w-1/2 px-3 mb-6 md:mb-0;
+}
+
+.form-input-second {
+  @apply w-full sm:w-1/2 px-3;
+}
+
 body {
     @apply min-h-screen text-white bg-dark-700;
 }
@@ -258,11 +286,11 @@ body {
 }
 
 .form-label {
-    @apply block uppercase tracking-wide text-secondary-400 text-xs font-bold mb-2;
+    @apply block uppercase tracking-wide text-secondary-400 text-lg font-nationalPark font-bold mb-2;
 }
 
 .form-input {
-    @apply block appearance-none outline-none w-full bg-dark-400 border text-white py-3 px-4 pr-8 leading-tight rounded;
+    @apply block appearance-none focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white w-full bg-dark-400 text-white py-3 px-4 pr-8 leading-tight rounded;
 }
 
 .form-textarea {
@@ -279,6 +307,10 @@ body {
 
 .select-dropdown {
     @apply mr-6 md:mr-10 lg:mr-8 xl:mr-10 py-1 px-2 bg-primary-500 text-dark-900 rounded-md font-nationalPark;
+}
+
+.flex-justify {
+  @apply flex justify-center;
 }
 
 .blog-card {

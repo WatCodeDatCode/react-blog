@@ -75,8 +75,8 @@ const TestForm = () => {
                     <Error error={error} buttonText="Go back" onClick={handleRemoveErrorButton} />
                 )
             ) : (
-                <div className="w-full flex flex-wrap justify-center">
-                    <h2 className="text-center w-screen text-6xl text-primary-500 my-2 sm:my-6">
+                <div className="form-page-container">
+                    <h2 className="page-header">
                         Add new entry
                     </h2>
                     <Form onSubmit={onSubmit} />

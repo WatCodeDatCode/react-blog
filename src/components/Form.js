@@ -7,21 +7,23 @@ const Form = ({ onSubmit }) => {
     console.error(errors)
 
     return (
-        <form className="mx-6 mb-10 pt-2 w-full md:w-2/3 xl:w-2/4" onSubmit={handleSubmit(onSubmit)}>
-            <div className="flex flex-wrap -mx-3 mb-6">
-                <div className="w-full sm:w-1/2 px-3 mb-6 md:mb-0">
+        <form
+            className="mx-6 mb-10 pt-2 w-full md:w-2/3 xl:w-2/4"
+            onSubmit={handleSubmit(onSubmit)}
+        >
+            <div className="form-flex-container">
+                <div className="form-input-first">
                     <label htmlFor="city_input" className="form-label">
                         City:
                     </label>
                     <input
                         className="form-input"
                         type="text"
-                       
                         name="city_input"
                         ref={register({ required: true, maxLength: 50 })}
                     />
                 </div>
-                <div className="w-full sm:w-1/2 px-3">
+                <div className="form-input-second">
                     <label htmlFor="country_input" className="form-label">
                         Country:
                     </label>
@@ -34,8 +36,8 @@ const Form = ({ onSubmit }) => {
                     </select>
                 </div>
             </div>
-            <div className="flex flex-wrap -mx-3 mb-6">
-                <div className="w-full sm:w-1/2 px-3 mb-6 md:mb-0">
+            <div className="form-flex-container">
+                <div className="form-input-first">
                     <label htmlFor="date_visited_input" className="form-label">
                         Date of visit:
                     </label>
@@ -46,7 +48,7 @@ const Form = ({ onSubmit }) => {
                         ref={register({ required: true })}
                     />
                 </div>
-                <div className="w-full sm:w-1/2 px-3">
+                <div className="form-input-second">
                     <label htmlFor="place_img_input" className="form-label">
                         Image path/URL of place:
                     </label>
@@ -59,9 +61,8 @@ const Form = ({ onSubmit }) => {
                     />
                 </div>
             </div>
-
-            <div className="flex flex-wrap -mx-3 mb-6">
-                <div className="w-full sm:w-1/2 px-3 mb-6 md:mb-0">
+            <div className="form-flex-container">
+                <div className="form-input-first">
                     <label htmlFor="author_input" className="form-label">
                         Author:
                     </label>
@@ -76,7 +77,7 @@ const Form = ({ onSubmit }) => {
                         })}
                     />
                 </div>
-                <div className="w-full sm:w-1/2 px-3">
+                <div className="form-input-second">
                     <label htmlFor="author_img_input" className="form-label">
                         Image path/URL of author:
                     </label>
@@ -89,9 +90,8 @@ const Form = ({ onSubmit }) => {
                     />
                 </div>
             </div>
-
-            <div className="-mx-3 mb-6">
-                <div className="w-full px-3 mb-6">
+            <div className="form-container">
+                <div className="form-container-input">
                     <label htmlFor="blog_title_input" className="form-label">
                         Blog title:
                     </label>
@@ -104,9 +104,8 @@ const Form = ({ onSubmit }) => {
                     />
                 </div>
             </div>
-
-            <div className="-mx-3 mb-6">
-                <div className="w-full px-3 mb-6">
+            <div className="form-container">
+                <div className="form-container-input">
                     <label htmlFor="blog_text_input" className="form-label">
                         Blog text:
                     </label>
@@ -117,7 +116,7 @@ const Form = ({ onSubmit }) => {
                     />
                 </div>
             </div>
-            <div className="flex justify-center">
+            <div className="flex-justify">
                 <button className="submit-button" type="submit">
                     Submit
                 </button>
