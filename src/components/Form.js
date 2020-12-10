@@ -2,8 +2,10 @@ import React from 'react'
 import FormCountryOptions from './FormCountryOptions'
 import { useForm } from 'react-hook-form'
 
-const Form = ({ onSubmit }) => {
-    const { register, handleSubmit, errors } = useForm()
+const Form = ({ onSubmit, preloadedValues }) => {
+    const { register, handleSubmit, errors } = useForm({
+        defaultValues: preloadedValues
+    })
     console.error(errors)
 
     return (
@@ -13,23 +15,23 @@ const Form = ({ onSubmit }) => {
         >
             <div className="form-flex-container">
                 <div className="form-input-first">
-                    <label htmlFor="city_input" className="form-label">
+                    <label htmlFor="city" className="form-label">
                         City:
                     </label>
                     <input
                         className="form-input"
                         type="text"
-                        name="city_input"
+                        name="city"
                         ref={register({ required: true, maxLength: 50 })}
                     />
                 </div>
                 <div className="form-input-second">
-                    <label htmlFor="country_input" className="form-label">
+                    <label htmlFor="country" className="form-label">
                         Country:
                     </label>
                     <select
                         className="form-input"
-                        name="country_input"
+                        name="country"
                         ref={register({ required: true })}
                     >
                         <FormCountryOptions />
@@ -38,38 +40,38 @@ const Form = ({ onSubmit }) => {
             </div>
             <div className="form-flex-container">
                 <div className="form-input-first">
-                    <label htmlFor="date_visited_input" className="form-label">
+                    <label htmlFor="date_visited" className="form-label">
                         Date of visit:
                     </label>
                     <input
                         className="form-input"
                         type="date"
-                        name="date_visited_input"
+                        name="date_visited"
                         ref={register({ required: true })}
                     />
                 </div>
                 <div className="form-input-second">
-                    <label htmlFor="place_img_input" className="form-label">
+                    <label htmlFor="place_img" className="form-label">
                         Image path/URL of place:
                     </label>
                     <input
                         className="form-input"
                         type="text"
                         placeholder="/images/places/filename"
-                        name="place_img_input"
+                        name="place_img"
                         ref={register({ required: true })}
                     />
                 </div>
             </div>
             <div className="form-flex-container">
                 <div className="form-input-first">
-                    <label htmlFor="author_input" className="form-label">
+                    <label htmlFor="author" className="form-label">
                         Author:
                     </label>
                     <input
                         className="form-input"
                         type="text"
-                        name="author_input"
+                        name="author"
                         ref={register({
                             required: true,
                             minLength: 5,
@@ -78,40 +80,40 @@ const Form = ({ onSubmit }) => {
                     />
                 </div>
                 <div className="form-input-second">
-                    <label htmlFor="author_img_input" className="form-label">
+                    <label htmlFor="author_img" className="form-label">
                         Image path/URL of author:
                     </label>
                     <input
                         className="form-input"
                         type="text"
                         placeholder="/images/images/filename"
-                        name="author_img_input"
+                        name="author_img"
                         ref={register({ required: true })}
                     />
                 </div>
             </div>
             <div className="form-container">
                 <div className="form-container-input">
-                    <label htmlFor="blog_title_input" className="form-label">
+                    <label htmlFor="title" className="form-label">
                         Blog title:
                     </label>
                     <input
                         className="form-input"
                         type="text"
                         placeholder="Some awesome title"
-                        name="blog_title_input"
+                        name="title"
                         ref={register({ required: true })}
                     />
                 </div>
             </div>
             <div className="form-container">
                 <div className="form-container-input">
-                    <label htmlFor="blog_text_input" className="form-label">
+                    <label htmlFor="blog_text" className="form-label">
                         Blog text:
                     </label>
                     <textarea
                         className="form-input form-textarea"
-                        name="blog_text_input"
+                        name="blog_text"
                         ref={register({ required: true, minLength: 50 })}
                     />
                 </div>

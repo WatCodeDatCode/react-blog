@@ -9,6 +9,7 @@ import Form from '../components/Form'
 const TestForm = () => {
     let history = useHistory()
 
+    const [enteredData, setEnteredData] = useState(null)
     const [loading, setLoading] = useState(false)
     const [error, setError] = useState(null)
 
@@ -17,19 +18,19 @@ const TestForm = () => {
 
     const postData = async (formData) => {
         setLoading(true)
-        await Geocode.fromAddress(`${formData.city_input},${formData.country_input}`).then(
+        await Geocode.fromAddress(`${formData.city},${formData.country}`).then(
             (response) => {
                 const { lat, lng } = response.results[0].geometry.location
                 axios
                     .post('https://travel-blogs-api.herokuapp.com/blogs', {
-                        title: formData.blog_title_input,
-                        city: formData.city_input,
-                        country: formData.country_input,
-                        author: formData.author_input,
-                        author_img: formData.author_img_input,
-                        blog_text: formData.blog_text_input,
-                        date_visited: formData.date_visited_input,
-                        place_img: formData.place_img_input,
+                        title: formData.title,
+                        city: formData.city,
+                        country: formData.country,
+                        author: formData.author,
+                        author_img: formData.author_img,
+                        blog_text: formData.blog_text,
+                        date_visited: formData.date_visited,
+                        place_img: formData.place_img,
                         lat,
                         lng,
                     })
@@ -62,7 +63,7 @@ const TestForm = () => {
     }
 
     const onSubmit = async (data) => {
-        console.log(data);
+        setEnteredData(data)
         await postData(data)
     }
 
@@ -72,14 +73,19 @@ const TestForm = () => {
                 loading ? (
                     <LoadingSpinner />
                 ) : (
-                    <Error error={error} buttonText="Go back" onClick={handleRemoveErrorButton} />
+                    <Error
+                        error={error}
+                        buttonText="Go back"
+                        onClick={handleRemoveErrorButton}
+                    />
                 )
             ) : (
                 <div className="form-page-container">
-                    <h2 className="page-header">
-                        Add new entry
-                    </h2>
-                    <Form onSubmit={onSubmit} />
+                    <h2 className="page-header">Add new entry</h2>
+                    <Form
+                        onSubmit={onSubmit}
+                        preloadedValues={enteredData ? enteredData : ''}
+                    />
                 </div>
             )}
         </div>
