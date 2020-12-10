@@ -69,6 +69,11 @@ const NewBlog = () => {
     const onSubmit = async (data) => {
         setEnteredData(data)
         await putData(data)
+        scrollToTop()
+    }
+
+    const scrollToTop = () => {
+        window.scrollTo({top: 0, behavior: 'smooth'})
     }
 
     const handleRemoveErrorButton = () => {

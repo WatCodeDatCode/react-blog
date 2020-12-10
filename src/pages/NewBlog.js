@@ -65,6 +65,11 @@ const TestForm = () => {
     const onSubmit = async (data) => {
         setEnteredData(data)
         await postData(data)
+        scrollToTop()
+    }
+
+    const scrollToTop = () => {
+        window.scrollTo({top: 0, behavior: 'smooth'})
     }
 
     return (
