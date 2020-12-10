@@ -46,7 +46,7 @@ const NewBlog = () => {
                         (response) => {
                             const data = response.data
                             console.log(data)
-                           /* history.push('/blog') */
+                           history.push('/blog')
                         },
                         (err) => {
                             setError(
