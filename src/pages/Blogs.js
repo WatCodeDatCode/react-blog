@@ -1,15 +1,7 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
-import BlogCard from '../components/BlogCard'
-import LoadingSpinner from '../components/LoadingSpinner'
-import Error from '../components/Error'
-import {
-    withScriptjs,
-    withGoogleMap,
-    GoogleMap,
-    Marker,
-    InfoWindow,
-} from 'react-google-maps'
+import { BlogCard, LoadingSpinner, Error } from '../componentExports.js'
+import { withScriptjs, withGoogleMap, GoogleMap, Marker, InfoWindow } from 'react-google-maps'
 import moment from 'moment'
 import mapStyle from '../components/styles/mapStyle'
 import { useHistory } from 'react-router-dom'
@@ -165,21 +157,23 @@ const Blogs = () => {
         <>
             {loading || error ? (
                 loading ? (
-                    <LoadingSpinner />
+                    <div className="h-90vh">
+                        <LoadingSpinner />
+                    </div>
                 ) : (
-                    <Error
-                        error={error}
-                        buttonText="Return home"
-                        onClick={handleRemoveErrorButton}
-                    />
+                    <div className="h-90vh">
+                        <Error
+                            error={error}
+                            buttonText="Return home"
+                            onClick={handleRemoveErrorButton}
+                        />
+                    </div>
                 )
             ) : (
                 <div className="blog-grid-container">
                     <div>
                         <div className="select-container">
-                            <p className="select-text">
-                                Filter:
-                            </p>
+                            <p className="select-text">Filter:</p>
                             <select
                                 className="select-dropdown"
                                 onChange={(event) =>

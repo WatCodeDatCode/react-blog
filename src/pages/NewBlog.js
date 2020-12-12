@@ -2,14 +2,10 @@ import React, { useState, useContext } from 'react'
 import { useHistory } from 'react-router-dom'
 import Geocode from 'react-geocode'
 import axios from 'axios'
-import LoadingSpinner from '../components/LoadingSpinner'
-import Error from '../components/Error'
-import Form from '../components/Form'
-import AuthContext from '../components/AuthContext'
-import AccessDenied from '../components/AccessDenied'
+import { LoadingSpinner, Error, Form, AuthContext, AccessDenied } from '../componentExports'
 
 const TestForm = () => {
-    const {token} = useContext(AuthContext)
+    const { token } = useContext(AuthContext)
     let history = useHistory()
 
     const [enteredData, setEnteredData] = useState(null)
@@ -72,22 +68,26 @@ const TestForm = () => {
     }
 
     const scrollToTop = () => {
-        window.scrollTo({top: 0, behavior: 'smooth'})
+        window.scrollTo({ top: 0, behavior: 'smooth' })
     }
 
     return (
         <>
             {loading || error ? (
                 loading ? (
-                    <LoadingSpinner />
+                    <div className="h-90vh">
+                        <LoadingSpinner />
+                    </div>
                 ) : (
-                    <Error
-                        error={error}
-                        buttonText="Go back"
-                        onClick={handleRemoveErrorButton}
-                    />
+                    <div className="h-90vh">
+                        <Error
+                            error={error}
+                            buttonText="Go back"
+                            onClick={handleRemoveErrorButton}
+                        />
+                    </div>
                 )
-            ) : (token ? (
+            ) : token ? (
                 <div className="form-page-container">
                     <h2 className="page-header">Add new entry</h2>
                     <Form
@@ -95,9 +95,8 @@ const TestForm = () => {
                         preloadedValues={enteredData ? enteredData : ''}
                     />
                 </div>
-                ) : (
-                    <AccessDenied />
-                )
+            ) : (
+                <AccessDenied />
             )}
         </>
     )

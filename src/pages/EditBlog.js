@@ -3,11 +3,7 @@ import { useHistory, useParams } from 'react-router-dom'
 import Geocode from 'react-geocode'
 import axios from 'axios'
 import moment from 'moment'
-import LoadingSpinner from '../components/LoadingSpinner'
-import Error from '../components/Error'
-import Form from '../components/Form'
-import AccessDenied from '../components/AccessDenied'
-import AuthContext from '../components/AuthContext'
+import { Form, AccessDenied, AuthContext, LoadingSpinner, Error } from '../componentExports.js'
 
 const NewBlog = () => {
     const { token } = useContext(AuthContext)
@@ -117,13 +113,17 @@ const NewBlog = () => {
         <>
             {loading || error ? (
                 loading ? (
-                    <LoadingSpinner />
+                    <div className="h-90vh">
+                        <LoadingSpinner />
+                    </div>
                 ) : (
-                    <Error
-                        error={error}
-                        buttonText="Go back"
-                        onClick={handleRemoveErrorButton}
-                    />
+                    <div className="h-90vh">
+                        <Error
+                            error={error}
+                            buttonText="Go back"
+                            onClick={handleRemoveErrorButton}
+                        />
+                    </div>
                 )
             ) : token ? (
                 <div className="form-page-container">

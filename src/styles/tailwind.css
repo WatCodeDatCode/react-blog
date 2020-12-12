@@ -22,15 +22,15 @@
 }
 
 .hero-text-header {
-  @apply text-primary-500 text-5xl md:text-6xl lg:text-7xl font-extrabold;
+    @apply text-primary-500 text-5xl md:text-6xl lg:text-7xl font-extrabold;
 }
 
 .hero-header-span {
-  @apply text-secondary-500 text-3xl md:text-4xl font-bold block mt-6;
+    @apply text-secondary-500 text-3xl md:text-4xl font-bold block mt-6;
 }
 
 .hero-cta-container {
-  @apply flex mt-16 justify-between content-center text-4xl;
+    @apply flex mt-16 justify-between content-center text-4xl;
 }
 
 .cta-hero {
@@ -38,7 +38,7 @@
 }
 
 .cta-hero:hover {
-    text-shadow: 0px 0px 15px #F1760E;
+    text-shadow: 0px 0px 15px #f1760e;
 }
 
 .header {
@@ -118,11 +118,19 @@
 }
 
 .user-menu {
-    @apply z-10 origin-top-right absolute right-0 mt-1 w-48 rounded-md py-1 bg-dark-800 ring-1 shadow-yellowXL ring-black ring-opacity-5;
+    @apply z-10 origin-top-right absolute right-0 mt-1 rounded-md py-1 bg-dark-800 ring-1 shadow-yellowXL ring-black ring-opacity-5 h-auto w-70vw sm:w-50vw md:w-40vw lg:w-30vw xl:w-20vw;
+}
+
+.user-menu-logged-in {
+    @apply z-10 origin-top-right absolute right-0 mt-1 rounded-md py-1 bg-dark-800 ring-1 shadow-yellowXL ring-black ring-opacity-5 h-auto w-auto;
 }
 
 .user-menu-item {
-    @apply block px-4 py-2 text-sm text-white hover:bg-dark-500;
+    @apply block min-w-max float-right mx-1 mb-3 text-xl font-nationalPark text-primary-500 hover:text-secondary-500;
+}
+
+.user-menu-item:hover {
+    text-shadow: 0px 0px 15px #f1760e;
 }
 
 .map-info-container {
@@ -246,31 +254,31 @@
 }
 
 .form-flex-container {
-  @apply flex flex-wrap -mx-3 mb-6;
+    @apply flex flex-wrap -mx-3 mb-6;
 }
 
 .form-page-container {
-  @apply w-full flex flex-wrap justify-center;
+    @apply w-full flex flex-wrap justify-center;
 }
 
 .page-header {
-  @apply text-center w-screen text-5xl md:text-7xl font-extrabold font-nationalPark text-primary-500 my-2 sm:my-6;
+    @apply text-center w-screen text-5xl md:text-7xl font-extrabold font-nationalPark text-primary-500 my-2 sm:my-6;
 }
 
 .form-container {
-  @apply -mx-3 mb-6;
+    @apply -mx-3 mb-6;
 }
 
 .form-container-input {
-  @apply w-full px-3 mb-6;
+    @apply w-full px-3 mb-6;
 }
 
 .form-input-first {
-  @apply w-full sm:w-1/2 px-3 mb-6 md:mb-0;
+    @apply w-full sm:w-1/2 px-3 mb-6 md:mb-0;
 }
 
 .form-input-second {
-  @apply w-full sm:w-1/2 px-3;
+    @apply w-full sm:w-1/2 px-3;
 }
 
 body {
@@ -293,8 +301,12 @@ body {
     @apply block appearance-none focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white w-full bg-dark-400 text-white py-3 px-4 pr-8 leading-tight rounded;
 }
 
+.login-input {
+    @apply block w-full mb-3 py-3 px-4 placeholder-primary-500 placeholder-opacity-75 bg-dark-500 text-primary-500 appearance-none focus:outline-none focus:ring-2 focus:ring-offset-0 focus:ring-white rounded;
+}
+
 .form-textarea {
-  @apply h-40 md:h-80;
+    @apply h-40 md:h-80;
 }
 
 .select-container {
@@ -310,7 +322,7 @@ body {
 }
 
 .flex-justify {
-  @apply flex justify-center;
+    @apply flex justify-center;
 }
 
 .blog-card {
@@ -370,7 +382,7 @@ body {
 }
 
 .error-container {
-    @apply h-screen w-full flex flex-col justify-center content-between;
+    @apply h-full w-full flex flex-col justify-center content-between;
 }
 
 .buttons-container {
@@ -393,7 +405,7 @@ body {
 }
 
 .loader-container {
-    @apply h-90vh flex justify-center items-center;
+    @apply h-full flex justify-center items-center;
 }
 
 .loader {

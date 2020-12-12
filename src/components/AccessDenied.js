@@ -1,10 +1,16 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 
 const AccessDenied = () => {
     return (
-        <div className="flex justify-center items-center w-full h-90vh font-nationalPark text-8xl text-secondary-500">
-            Acces denied
-        </div>
+        <>
+            <div className="error-container">
+                <h2 className="error-header-text">Acces denied</h2>
+                <NavLink to="/" className="cta-button">
+                    Home
+                </NavLink>
+            </div>
+        </>
     )
 }
 

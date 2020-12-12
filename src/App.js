@@ -1,8 +1,7 @@
 import React, { useState, useEffect, Fragment } from 'react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
-import {Home, Blogs, Blog, Contact, NewBlog, EditBlog, PageNotFound} from './pageExports.js'
-import {Navbar, Footer, ScrollToTop, AuthContext} from './componentExports.js'
-
+import { Home, Blogs, Blog, Contact, NewBlog, EditBlog, PageNotFound } from './pageExports.js'
+import { Navbar, Footer, ScrollToTop, AuthContext } from './componentExports.js'
 
 function App() {
     const [token, setToken] = useState(null)
@@ -29,9 +28,8 @@ function App() {
     }, [])
 
     return (
-        
-            <Router>
-                <AuthContext.Provider value={{token, handleLogin, handleLogout}}>
+        <Router>
+            <AuthContext.Provider value={{ token, handleLogin, handleLogout }}>
                 <Navbar />
                 <Fragment>
                     <ScrollToTop>
@@ -67,9 +65,8 @@ function App() {
                     </ScrollToTop>
                 </Fragment>
                 <Footer />
-                </AuthContext.Provider>
-            </Router>
-
+            </AuthContext.Provider>
+        </Router>
     )
 }
 

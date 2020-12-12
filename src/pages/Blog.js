@@ -1,15 +1,8 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 import { useParams } from 'react-router'
-import BlogEntry from '../components/BlogEntry'
-import LoadingSpinner from '../components/LoadingSpinner'
-import Error from '../components/Error'
-import {
-    withScriptjs,
-    withGoogleMap,
-    GoogleMap,
-    Marker,
-} from 'react-google-maps'
+import { BlogEntry, LoadingSpinner, Error } from '../componentExports.js'
+import { withScriptjs, withGoogleMap, GoogleMap, Marker } from 'react-google-maps'
 import mapStyle from '../components/styles/mapStyle'
 import { useHistory } from 'react-router-dom'
 
@@ -75,13 +68,17 @@ const Blog = () => {
         <>
             {loading || error ? (
                 loading ? (
-                    <LoadingSpinner />
+                    <div className="h-90vh">
+                        <LoadingSpinner />
+                    </div>
                 ) : (
-                    <Error
-                        error={error}
-                        buttonText="Go back"
-                        onClick={handleRemoveErrorButton}
-                    />
+                    <div className="h-90vh">
+                        <Error
+                            error={error}
+                            buttonText="Go back"
+                            onClick={handleRemoveErrorButton}
+                        />
+                    </div>
                 )
             ) : (
                 <div className="blog-grid-container">

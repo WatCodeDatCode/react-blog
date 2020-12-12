@@ -1,14 +1,12 @@
 import React, { useContext, useEffect, useState } from 'react'
-import MenuItems from './MenuItems'
-import MobileMenu from './MobileMenu'
-import SignInForm from './SignInForm'
-import AuthContext from './AuthContext'
+import { MenuItems, MobileMenu, SignInForm, AuthContext } from '../componentExports.js'
+import { NavLink } from 'react-router-dom'
 
 const Navbar = () => {
     const [mobileMenuIsOpen, setMobileMenuIsOpen] = useState(false)
     const [userDropdownIsOpen, setUserDropdownIsOpen] = useState(false)
 
-    const {token, handleLogout} = useContext(AuthContext)
+    const { token, handleLogout } = useContext(AuthContext)
 
     const handleMobileMenuClick = () => {
         setMobileMenuIsOpen(!mobileMenuIsOpen)
@@ -78,8 +76,12 @@ const Navbar = () => {
                             </div>
                             <div
                                 className={`${
-                                    userDropdownIsOpen ? 'block' : 'hidden'
-                                } user-menu`}
+                                    userDropdownIsOpen
+                                        ? token
+                                            ? 'block, user-menu-logged-in'
+                                            : 'block, user-menu'
+                                        : 'hidden'
+                                }`}
                                 role="menu"
                                 aria-orientation="vertical"
                                 aria-labelledby="user-menu"
@@ -87,21 +89,21 @@ const Navbar = () => {
                                 {!token ? (
                                     <SignInForm />
                                 ) : (
-                                    <>
-                                        <a
-                                            href="/"
+                                    <div className="my-3 mx-3 float-right">
+                                        <NavLink
+                                            to="/"
                                             className="user-menu-item"
-                                            role="menuitem"
                                         >
                                             Your Profile
-                                        </a>
+                                        </NavLink>
+
                                         <button
-                                            className="user-menu-item"
+                                            className="cta-button"
                                             onClick={handleLogout}
                                         >
                                             Sign out
                                         </button>
-                                    </>
+                                    </div>
                                 )}
                             </div>
                         </div>
