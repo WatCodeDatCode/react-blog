@@ -106,7 +106,7 @@ const Navbar = () => {
                                                 to="/"
                                                 className="user-menu-item"
                                             >
-                                                Your Profile
+                                                My profile
                                             </NavLink>
 
                                             <button
