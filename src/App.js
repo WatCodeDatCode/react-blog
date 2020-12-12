@@ -1,27 +1,32 @@
-import React, { useState, Fragment } from 'react'
+import React, { useState, useEffect, Fragment } from 'react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
-import Navbar from './components/Navbar'
-import Home from './pages/Home'
-import Blogs from './pages/Blogs'
-import Blog from './pages/Blog'
-import Contact from './pages/Contact'
-import NewBlog from './pages/NewBlog'
-import EditBlog from './pages/EditBlog'
-import Footer from './components/Footer'
-import PageNotFound from './pages/PageNotFound'
-import ScrollToTop from './components/ScrollToTop'
-import AuthContext from './components/AuthContext'
+import {Home, Blogs, Blog, Contact, NewBlog, EditBlog, PageNotFound} from './pageExports.js'
+import {Navbar, Footer, ScrollToTop, AuthContext} from './componentExports.js'
+
 
 function App() {
     const [token, setToken] = useState(null)
 
     const handleLogin = (token) => {
-        setToken(token)
+        localStorage.setItem('token', token)
+        setToken(localStorage.getItem('token'))
+    }
+
+    const getTokenStatus = () => {
+        const token = localStorage.getItem('token')
+        if (token) {
+            setToken(token)
+        }
     }
 
     const handleLogout = () => {
+        localStorage.removeItem('token')
         setToken(null)
     }
+
+    useEffect(() => {
+        getTokenStatus()
+    }, [])
 
     return (
         

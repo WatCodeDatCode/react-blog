@@ -20,7 +20,6 @@ const SignInForm = () => {
                     const data = response.data
                     console.log(data)
                     const { token } = response.data
-                    console.log(token)
                     handleLogin(token)
                 },
                 (err) => {
