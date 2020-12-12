@@ -5,6 +5,20 @@ module.exports = {
     presets: [],
     darkMode: false, // or 'media' or 'class'
     theme: {
+        extend: {
+            padding: {
+                '7vh': '7vh',
+            },
+            margin: {
+                '5vh': '5vh',
+                '7vh': '7vh',
+                '-7vh': '-7vh',
+            },
+            inset: {
+                '5vh': '5vh',
+                '7vh': '7vh',
+               }
+        },
         screens: {
             sm: '640px',
             md: '768px',
@@ -428,6 +442,7 @@ module.exports = {
             '5/6': '83.333333%',
             full: '100%',
             screen: '100vh',
+            '5vh': '5vh',
             '10vh': '10vh',
             '20vh': '20vh',
             '30vh': '30vh',
@@ -437,6 +452,7 @@ module.exports = {
             '70vh': '70vh',
             '80vh': '80vh',
             '90vh': '90vh',
+            '91vh': '91vh',
             '95vh': '95vh',
         }),
         inset: (theme, { negative }) => ({

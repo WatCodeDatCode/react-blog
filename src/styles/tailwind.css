@@ -50,7 +50,7 @@
 }
 
 .header-nav-container {
-    @apply relative flex items-center justify-between h-16;
+    @apply relative flex items-center justify-between h-5vh;
 }
 
 .header-company-container {
@@ -67,6 +67,10 @@
 
 .header-company-name {
     @apply hidden md:block ml-3 mr-8 md:text-2xl lg:text-4xl font-nationalPark font-extrabold tracking-wider hover:text-primary-500;
+}
+
+.sticky-nav {
+    @apply sticky top-0 w-screen z-30;
 }
 
 .desktop-nav-container {
@@ -290,7 +294,7 @@ body {
 }
 
 .map-container {
-    @apply w-auto h-screen sticky top-0 left-0;
+    @apply w-auto h-91vh sticky top-7vh left-0;
 }
 
 .submit-button {

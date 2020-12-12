@@ -592,8 +592,8 @@ video {
   height: 1.5rem;
 }
 
-.h-90vh {
-  height: 90vh;
+.h-95vh {
+  height: 95vh;
 }
 
 .text-4xl {
@@ -917,7 +917,7 @@ video {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 4rem;
+  height: 5vh;
   position: relative;
 }
 
@@ -987,6 +987,14 @@ video {
     font-size: 2.25rem;
     line-height: 2.5rem;
   }
+}
+
+.sticky-nav {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0px;
+  width: 100vw;
+  z-index: 30;
 }
 
 .desktop-nav-container {
@@ -2099,11 +2107,11 @@ body {
 }
 
 .map-container {
-  height: 100vh;
+  height: 91vh;
   position: -webkit-sticky;
   position: sticky;
-  top: 0px;
   left: 0px;
+  top: 7vh;
   width: auto;
 }
 
