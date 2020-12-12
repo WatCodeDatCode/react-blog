@@ -1,10 +1,14 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import MenuItems from './MenuItems'
 import MobileMenu from './MobileMenu'
+import SignInForm from './SignInForm'
+import AuthContext from './AuthContext'
 
 const Navbar = () => {
     const [mobileMenuIsOpen, setMobileMenuIsOpen] = useState(false)
     const [userDropdownIsOpen, setUserDropdownIsOpen] = useState(false)
+
+    const {token, handleLogout} = useContext(AuthContext)
 
     const handleMobileMenuClick = () => {
         setMobileMenuIsOpen(!mobileMenuIsOpen)
@@ -80,27 +84,25 @@ const Navbar = () => {
                                 aria-orientation="vertical"
                                 aria-labelledby="user-menu"
                             >
-                                <a
-                                    href="/"
-                                    className="user-menu-item"
-                                    role="menuitem"
-                                >
-                                    Your Profile
-                                </a>
-                                <a
-                                    href="/"
-                                    className="user-menu-item"
-                                    role="menuitem"
-                                >
-                                    Settings
-                                </a>
-                                <a
-                                    href="/"
-                                    className="user-menu-item"
-                                    role="menuitem"
-                                >
-                                    Sign out
-                                </a>
+                                {!token ? (
+                                    <SignInForm />
+                                ) : (
+                                    <>
+                                        <a
+                                            href="/"
+                                            className="user-menu-item"
+                                            role="menuitem"
+                                        >
+                                            Your Profile
+                                        </a>
+                                        <button
+                                            className="user-menu-item"
+                                            onClick={handleLogout}
+                                        >
+                                            Sign out
+                                        </button>
+                                    </>
+                                )}
                             </div>
                         </div>
                     </div>

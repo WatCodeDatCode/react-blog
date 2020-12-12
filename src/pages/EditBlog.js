@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import { useHistory, useParams } from 'react-router-dom'
 import Geocode from 'react-geocode'
 import axios from 'axios'
@@ -6,8 +6,11 @@ import moment from 'moment'
 import LoadingSpinner from '../components/LoadingSpinner'
 import Error from '../components/Error'
 import Form from '../components/Form'
+import AccessDenied from '../components/AccessDenied'
+import AuthContext from '../components/AuthContext'
 
 const NewBlog = () => {
+    const { token } = useContext(AuthContext)
     let history = useHistory()
     const { id } = useParams()
 
@@ -21,9 +24,7 @@ const NewBlog = () => {
 
     const putData = async (formData) => {
         setLoading(true)
-        await Geocode.fromAddress(
-            `${formData.city},${formData.country}`
-        ).then(
+        await Geocode.fromAddress(`${formData.city},${formData.country}`).then(
             (response) => {
                 const { lat, lng } = response.results[0].geometry.location
                 console.log(lat, lng)
@@ -46,7 +47,7 @@ const NewBlog = () => {
                         (response) => {
                             const data = response.data
                             console.log(data)
-                           history.push('/blog')
+                            history.push('/blog')
                         },
                         (err) => {
                             setError(
@@ -73,13 +74,13 @@ const NewBlog = () => {
     }
 
     const scrollToTop = () => {
-        window.scrollTo({top: 0, behavior: 'smooth'})
+        window.scrollTo({ top: 0, behavior: 'smooth' })
     }
 
     const handleRemoveErrorButton = () => {
         error ===
-            'Destination does not seem to exist, please check that you entered the correct country and city.' 
-        || error ===
+            'Destination does not seem to exist, please check that you entered the correct country and city.' ||
+        error ===
             'We could not enter your data to the server. Please try again later.'
             ? setError(false)
             : history.push('/')
@@ -101,7 +102,6 @@ const NewBlog = () => {
                 ).format('YYYY-MM-DD')
 
                 setFetchedData(formData)
-
             } catch (err) {
                 console.error(err)
                 setError(
@@ -114,7 +114,7 @@ const NewBlog = () => {
     }, [id])
 
     return (
-        <div>
+        <>
             {loading || error ? (
                 loading ? (
                     <LoadingSpinner />
@@ -125,18 +125,22 @@ const NewBlog = () => {
                         onClick={handleRemoveErrorButton}
                     />
                 )
-            ) : (
+            ) : token ? (
                 <div className="form-page-container">
                     <h2 className="page-header">Edit entry</h2>
                     {fetchedData && (
                         <Form
                             onSubmit={onSubmit}
-                            preloadedValues={enteredData ? enteredData : fetchedData}
+                            preloadedValues={
+                                enteredData ? enteredData : fetchedData
+                            }
                         />
                     )}
                 </div>
+            ) : (
+                <AccessDenied />
             )}
-        </div>
+        </>
     )
 }
 

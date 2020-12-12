@@ -1,12 +1,15 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import { useHistory } from 'react-router-dom'
 import Geocode from 'react-geocode'
 import axios from 'axios'
 import LoadingSpinner from '../components/LoadingSpinner'
 import Error from '../components/Error'
 import Form from '../components/Form'
+import AuthContext from '../components/AuthContext'
+import AccessDenied from '../components/AccessDenied'
 
 const TestForm = () => {
+    const {token} = useContext(AuthContext)
     let history = useHistory()
 
     const [enteredData, setEnteredData] = useState(null)
@@ -73,7 +76,7 @@ const TestForm = () => {
     }
 
     return (
-        <div>
+        <>
             {loading || error ? (
                 loading ? (
                     <LoadingSpinner />
@@ -84,7 +87,7 @@ const TestForm = () => {
                         onClick={handleRemoveErrorButton}
                     />
                 )
-            ) : (
+            ) : (token ? (
                 <div className="form-page-container">
                     <h2 className="page-header">Add new entry</h2>
                     <Form
@@ -92,8 +95,11 @@ const TestForm = () => {
                         preloadedValues={enteredData ? enteredData : ''}
                     />
                 </div>
+                ) : (
+                    <AccessDenied />
+                )
             )}
-        </div>
+        </>
     )
 }
 

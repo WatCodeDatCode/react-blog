@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { NavLink } from 'react-router-dom'
+import AuthContext from './AuthContext'
 
 const MenuItems = ({ onClick, className, activeClassName, buttonClass }) => {
+    const { token } = useContext(AuthContext)
     return (
         <>
             <NavLink
@@ -30,14 +32,16 @@ const MenuItems = ({ onClick, className, activeClassName, buttonClass }) => {
             >
                 Contact
             </NavLink>
-            <NavLink
-                to="/blog/new"
-                className={buttonClass}
-                exact={true}
-                onClick={onClick}
-            >
-                Add blog
-            </NavLink>
+            {token && (
+                <NavLink
+                    to="/blog/new"
+                    className={buttonClass}
+                    exact={true}
+                    onClick={onClick}
+                >
+                    Add blog
+                </NavLink>
+            )}
         </>
     )
 }

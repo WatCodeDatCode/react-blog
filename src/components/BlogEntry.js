@@ -1,9 +1,11 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import moment from 'moment'
 import axios from 'axios'
 import { useHistory } from 'react-router-dom'
+import AuthContext from './AuthContext'
 
 const BlogEntry = ({ entry }) => {
+    const { token } = useContext(AuthContext)
     let history = useHistory()
 
     const deleteEntry = async (id) => {
@@ -48,6 +50,7 @@ const BlogEntry = ({ entry }) => {
                         />
                     </svg>
                 </a>
+                {token &&
                 <div className="flex">
                     <a href={`/blog/edit/${entry._id}`}>
                         <button className="edit-button">Edit entry</button>
@@ -65,6 +68,7 @@ const BlogEntry = ({ entry }) => {
                         </button>
                     </div>
                 </div>
+                }
             </div>
             <div className="blog-entry-container">
                 <h2 className="blog-title">{entry.title}</h2>

@@ -584,13 +584,26 @@ video {
   justify-content: space-around;
 }
 
+.font-nationalPark {
+  font-family: nationalPark;
+}
+
 .h-6 {
   height: 1.5rem;
+}
+
+.h-90vh {
+  height: 90vh;
 }
 
 .text-4xl {
   font-size: 2.25rem;
   line-height: 2.5rem;
+}
+
+.text-8xl {
+  font-size: 6rem;
+  line-height: 1;
 }
 
 .mx-6 {
@@ -669,6 +682,11 @@ video {
 .text-dark-800 {
   --tw-text-opacity: 1;
   color: rgba(16, 18, 21, var(--tw-text-opacity));
+}
+
+.text-secondary-500 {
+  --tw-text-opacity: 1;
+  color: rgba(241, 118, 14, var(--tw-text-opacity));
 }
 
 .hover\:text-white:hover {
