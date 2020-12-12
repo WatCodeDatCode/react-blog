@@ -1,7 +1,13 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 import { BlogCard, LoadingSpinner, Error } from '../componentExports.js'
-import { withScriptjs, withGoogleMap, GoogleMap, Marker, InfoWindow } from 'react-google-maps'
+import {
+    withScriptjs,
+    withGoogleMap,
+    GoogleMap,
+    Marker,
+    InfoWindow,
+} from 'react-google-maps'
 import moment from 'moment'
 import mapStyle from '../components/styles/mapStyle'
 import { useHistory } from 'react-router-dom'
@@ -170,45 +176,62 @@ const Blogs = () => {
                     </div>
                 )
             ) : (
-                <div className="blog-grid-container">
-                    <div>
-                        <div className="select-container">
-                            <p className="select-text">Filter:</p>
-                            <select
-                                className="select-dropdown"
-                                onChange={(event) =>
-                                    setSortBy(event.target.value)
-                                }
-                            >
-                                <option value="most_recent">Most recent</option>
-                                <option value="oldest_first">
-                                    Oldest first
-                                </option>
-                                {authors &&
-                                    authors.map((author) => (
-                                        <option value={author}>
-                                            By {author}
+                <div>
+                    <div
+                        style={{
+                            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('/images/places/dimmuborgir.jpg')`,
+                            backgroundRepeat: 'no-repeat',
+                            height: '100%',
+                            backgroundAttachment: 'fixed',
+                        }}
+                    >
+                        <div className="blog-grid-container">
+                            <div>
+                                <div className="select-container">
+                                    <p className="select-text">Filter:</p>
+                                    <select
+                                        className="select-dropdown"
+                                        onChange={(event) =>
+                                            setSortBy(event.target.value)
+                                        }
+                                    >
+                                        <option value="most_recent">
+                                            Most recent
                                         </option>
+                                        <option value="oldest_first">
+                                            Oldest first
+                                        </option>
+                                        {authors &&
+                                            authors.map((author) => (
+                                                <option value={author}>
+                                                    By {author}
+                                                </option>
+                                            ))}
+                                    </select>
+                                </div>
+                                <div className="flex flex-wrap justify-around">
+                                    {sortedEntries.map((entry) => (
+                                        <BlogCard entry={entry} />
                                     ))}
-                            </select>
-                        </div>
-                        <div className="flex flex-wrap justify-around">
-                            {sortedEntries.map((entry) => (
-                                <BlogCard entry={entry} />
-                            ))}
-                        </div>
-                    </div>
+                                </div>
+                            </div>
 
-                    <div className="map-container">
-                        <Map
-                            isMarkerShown
-                            googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=${process.env.REACT_APP_MAP_KEY}`}
-                            loadingElement={<div style={{ height: `100%` }} />}
-                            containerElement={
-                                <div style={{ height: `100%` }} />
-                            }
-                            mapElement={<div style={{ height: `100%` }} />}
-                        />
+                            <div className="map-container">
+                                <Map
+                                    isMarkerShown
+                                    googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=${process.env.REACT_APP_MAP_KEY}`}
+                                    loadingElement={
+                                        <div style={{ height: `100%` }} />
+                                    }
+                                    containerElement={
+                                        <div style={{ height: `100%` }} />
+                                    }
+                                    mapElement={
+                                        <div style={{ height: `100%` }} />
+                                    }
+                                />
+                            </div>
+                        </div>
                     </div>
                 </div>
             )}

@@ -7,7 +7,7 @@
 @tailwind utilities;
 
 .hero-image {
-    @apply h-90vh w-full object-cover opacity-80;
+    @apply h-95vh w-full object-cover;
 }
 
 .hero-overlay {
@@ -251,6 +251,10 @@
 
 .footer-nav-active {
     @apply w-auto text-primary-500 font-nationalPark mb-3 tracking-wider text-2xl lg:text-3xl font-bold hover:text-secondary-500 focus:ring-white;
+}
+
+.form-wrapper {
+    @apply mx-6 mb-10 pt-2 w-full md:w-2/3 xl:w-2/4;
 }
 
 .form-flex-container {

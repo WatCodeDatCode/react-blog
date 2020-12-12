@@ -6,7 +6,7 @@ const Home = () => {
         <div className="relative">
             <img
                 className="hero-image"
-                src="/images/hero.jpg"
+                src="/images/places/voss.jpg"
                 alt="Gullible's Travels Home"
             />
             <div className="hero-overlay">

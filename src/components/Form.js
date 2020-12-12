@@ -10,7 +10,7 @@ const Form = ({ onSubmit, preloadedValues }) => {
 
     return (
         <form
-            className="mx-6 mb-10 pt-2 w-full md:w-2/3 xl:w-2/4"
+            className="form-wrapper"
             onSubmit={handleSubmit(onSubmit)}
         >
             <div className="form-flex-container">
