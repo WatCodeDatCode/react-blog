@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom'
 
 const PageNotFound = () => {
     return (
-        <div className="h-90vh">
+        <div className="h-95vh">
             <div className="error-container">
                 <p className="error-header-text">404 - Page Not Found</p>
                 <div className="mx-auto">

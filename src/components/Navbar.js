@@ -1,5 +1,11 @@
-import React, { useContext, useEffect, useState } from 'react'
-import { MenuItems, MobileMenu, SignInForm, AuthContext } from '../componentExports.js'
+import React, { useRef, useContext, useState } from 'react'
+import {
+    MenuItems,
+    MobileMenu,
+    SignInForm,
+    AuthContext,
+} from '../componentExports.js'
+import useOutsideClick from '../useOutsideClick'
 import { NavLink } from 'react-router-dom'
 
 const Navbar = () => {
@@ -16,7 +22,11 @@ const Navbar = () => {
         setUserDropdownIsOpen(!userDropdownIsOpen)
     }
 
-    useEffect(() => {})
+    const ref = useRef();
+
+    useOutsideClick(ref, () => {
+        if (userDropdownIsOpen) setUserDropdownIsOpen(false);
+      });
 
     return (
         <div className="header">
@@ -85,6 +95,7 @@ const Navbar = () => {
                                 role="menu"
                                 aria-orientation="vertical"
                                 aria-labelledby="user-menu"
+                                ref={ref}
                             >
                                 {!token ? (
                                     <SignInForm />

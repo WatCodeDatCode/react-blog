@@ -75,11 +75,11 @@ const TestForm = () => {
         <>
             {loading || error ? (
                 loading ? (
-                    <div className="h-90vh">
+                    <div className="h-95vh">
                         <LoadingSpinner />
                     </div>
                 ) : (
-                    <div className="h-90vh">
+                    <div className="h-95vh">
                         <Error
                             error={error}
                             buttonText="Go back"
