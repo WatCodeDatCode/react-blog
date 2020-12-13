@@ -50,7 +50,7 @@
 }
 
 .header-nav-container {
-    @apply relative flex items-center justify-between h-5vh;
+    @apply relative flex items-center justify-between h-6vh;
 }
 
 .header-company-container {
@@ -298,7 +298,7 @@ body {
 }
 
 .map-container {
-    @apply w-auto h-91vh sticky top-7vh left-0;
+    @apply w-auto h-90vh sticky top-8vh left-0;
 }
 
 .submit-button {
@@ -394,7 +394,11 @@ body {
 }
 
 .error-container {
-    @apply h-full w-full flex flex-col justify-center content-between;
+    @apply h-91vh w-full flex flex-col justify-center content-between;
+}
+
+.login-error-container {
+    @apply h-full w-full flex flex-col justify-center;
 }
 
 .buttons-container {

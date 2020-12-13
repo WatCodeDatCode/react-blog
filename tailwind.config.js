@@ -17,7 +17,10 @@ module.exports = {
             inset: {
                 '5vh': '5vh',
                 '7vh': '7vh',
-               }
+                '8vh': '8vh',
+                '9vh': '9vh',
+                '10vh': '10vh',
+            },
         },
         screens: {
             sm: '640px',
@@ -443,6 +446,9 @@ module.exports = {
             full: '100%',
             screen: '100vh',
             '5vh': '5vh',
+            '6vh': '6vh',
+            '7vh': '7vh',
+            '8vh': '8vh',
             '10vh': '10vh',
             '20vh': '20vh',
             '30vh': '30vh',
@@ -451,6 +457,7 @@ module.exports = {
             '60vh': '60vh',
             '70vh': '70vh',
             '80vh': '80vh',
+            '89vh': '89vh',
             '90vh': '90vh',
             '91vh': '91vh',
             '95vh': '95vh',
@@ -565,6 +572,7 @@ module.exports = {
             0: '0px',
             full: '100%',
             screen: '100vh',
+            '50vh': '50vh'
         },
         minWidth: {
             0: '0px',

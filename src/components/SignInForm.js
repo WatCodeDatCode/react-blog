@@ -31,8 +31,6 @@ const SignInForm = () => {
                     console.error(err)
                     setInputs({})
                     setError('Invalid login.')
-
-                    console.error(err)
                 }
             )
         setLoading(false)
