@@ -35,8 +35,7 @@ const NewBlog = () => {
                     })
                     .then(
                         (response) => {
-                            const data = response.data
-                            console.log(data)
+                            console.log(response.data)
                             history.push('/blog')
                         },
                         (err) => {

@@ -23,7 +23,6 @@ const NewBlog = () => {
         await Geocode.fromAddress(`${formData.city},${formData.country}`).then(
             (response) => {
                 const { lat, lng } = response.results[0].geometry.location
-                console.log(lat, lng)
                 axios
                     .put(`https://travel-blogs-api.herokuapp.com/blogs/${id}`, {
                         title: formData.title,
@@ -41,8 +40,7 @@ const NewBlog = () => {
                     })
                     .then(
                         (response) => {
-                            const data = response.data
-                            console.log(data)
+                            console.log(response.data)
                             history.push('/blog')
                         },
                         (err) => {
