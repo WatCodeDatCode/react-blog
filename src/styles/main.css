@@ -2067,6 +2067,17 @@ video {
   width: 100%;
 }
 
+.form-error-message {
+  font-family: nationalPark;
+  font-weight: 800;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  margin-left: 0.5rem;
+  --tw-text-opacity: 1;
+  color: rgba(239, 68, 68, var(--tw-text-opacity));
+  letter-spacing: 0.025em;
+}
+
 .form-input-first {
   margin-bottom: 1.5rem;
   padding-left: 0.75rem;

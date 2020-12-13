@@ -4,7 +4,7 @@ import Geocode from 'react-geocode'
 import axios from 'axios'
 import { LoadingSpinner, Error, Form, AuthContext, AccessDenied } from '../componentExports'
 
-const TestForm = () => {
+const NewBlog = () => {
     const { token } = useContext(AuthContext)
     let history = useHistory()
 
@@ -102,4 +102,4 @@ const TestForm = () => {
     )
 }
 
-export default TestForm
+export default NewBlog

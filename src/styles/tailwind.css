@@ -281,6 +281,10 @@
     @apply w-full px-3 mb-6;
 }
 
+.form-error-message {
+    @apply text-red-500 text-lg font-nationalPark font-extrabold tracking-wide ml-2;
+}
+
 .form-input-first {
     @apply w-full sm:w-1/2 px-3 mb-6 md:mb-0;
 }
