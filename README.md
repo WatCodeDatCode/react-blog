@@ -12,14 +12,19 @@ This travel blog with react is a final project for the _Full-Stack Web Developme
 * Blog page with multiple blog entries and a Google map including markers for each visited destination. 
 * Markers can be clicked to show a preview of the corresponding blog, which can also be clicked to open entry. 
 * Blog entries are fetched through a database created specifically for this project. [See the repo here](https://github.com/WatCodeDatCode/blog-server).
-* New blogs can be entered through a separate form. Before posting the data to the database, a call to the Geocoding API is made to fetch geocoordinates which are then sent with the post request. 
-* New blogs appear automatically on the blog page after successful post.
+* The database also has a stored user. When logging in with user details new blogs can be entered through a protected form. 
+* Before posting the data from the form to the database, a call to the Geocoding API is made to fetch geocoordinates. This allows map markers to be placed without querying latitude and longitude. 
+* New blogs appear automatically on the blog page after successful post. 
+* Blogs can be filtered by date or by author, new authors are automatically added to the filter. 
 * On the detail page of each blog a map with only a marker of the specific location is shown. 
-* Blogs can be edited, a form is prefilled and thus quickly edited. 
+* If logged in, blogs can be edited using a prefilled form. Blogs can also be deleted.
+* On the contact page a form can be submitted which sends an email using [emailjs](https://www.emailjs.com/). 
 
-## Planned
-* Login including authentication so that entries can only be added/edited when logged in.
-* Improve design and add home / contact pages.
+## Future ideas
+* Add sign-up section to register new users.
+* Allow editing of user profiles. 
+* Profiles can upload images which will then automatically be taken (along with user name) for blog posts. 
+* Blogs editable only by user that wrote them / admin. 
 
 ## Technologies
 Project is created with:
