@@ -460,6 +460,7 @@ module.exports = {
             '89vh': '89vh',
             '90vh': '90vh',
             '91vh': '91vh',
+            '92vh': '92vh',
             '95vh': '95vh',
         }),
         inset: (theme, { negative }) => ({

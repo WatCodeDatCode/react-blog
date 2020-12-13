@@ -70,7 +70,7 @@
 }
 
 .sticky-nav {
-    @apply sticky top-0 w-screen z-30;
+    @apply sticky top-0 w-full z-30;
 }
 
 .desktop-nav-container {
@@ -270,7 +270,7 @@
 }
 
 .page-header {
-    @apply text-center w-screen text-5xl md:text-7xl font-extrabold font-nationalPark text-primary-500 my-2 sm:my-6;
+    @apply text-center w-full text-5xl md:text-7xl font-extrabold font-nationalPark text-primary-500 my-2 sm:my-6;
 }
 
 .form-container {
@@ -298,7 +298,7 @@ body {
 }
 
 .map-container {
-    @apply w-auto h-90vh sticky top-8vh left-0;
+    @apply w-auto h-92vh sticky top-8vh left-0;
 }
 
 .submit-button {
@@ -310,7 +310,7 @@ body {
 }
 
 .form-input {
-    @apply block appearance-none focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white w-full bg-dark-400 text-white py-3 px-4 pr-8 leading-tight rounded;
+    @apply block appearance-none focus:outline-none focus:ring-2 focus:ring-offset-0 focus:ring-white w-full bg-dark-400 text-white py-3 px-4 pr-8 leading-tight rounded;
 }
 
 .login-input {
@@ -406,7 +406,7 @@ body {
 }
 
 .image-overlay {
-    @apply absolute top-0 bottom-0 left-0 right-0 h-full w-full opacity-0 transition bg-dark-900 bg-opacity-60 hover:opacity-100;
+    @apply absolute top-0 bottom-0 left-0 right-0 h-full w-full opacity-0 transition bg-dark-900 bg-opacity-60 hover:opacity-100 rounded-lg;
 }
 
 .image-text {
@@ -416,8 +416,31 @@ body {
     @apply font-nationalPark text-primary-500 text-6xl font-extrabold absolute top-2/4 left-2/4 text-center;
 }
 
+.image-contact-info {
+    @apply text-base sm:text-xl md:text-3xl font-bold tracking-wide;
+}
+
+.image-contact-details {
+    @apply text-sm sm:text-lg md:text-2xl tracking-wide text-white;
+}
+
+.contact-body-container {
+    @apply mx-6 mb-8 pt-2 w-full h-auto relative md:w-2/3 xl:w-2/4;
+}
+
+.contact-image-text {
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    @apply font-nationalPark text-primary-500 absolute top-2/4 left-2/4 text-center;
+}
+
 .blog-grid-container {
     @apply grid lg:grid-cols-2 w-full;
+}
+
+.success-message {
+    @apply text-green-500 font-nationalPark text-3xl font-bold;
 }
 
 .loader-container {
