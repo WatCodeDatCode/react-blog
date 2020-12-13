@@ -121,11 +121,11 @@ const Contact = () => {
                 </div>
                 {loading || error ? (
                     loading ? (
-                        <div className="min-h-50vh">
+                        <div className="form-wrapper">
                             <LoadingSpinner />
                         </div>
                     ) : (
-                        <div className="min-h-50vh">
+                        <div className="form-wrapper">
                             <LoginError
                                 error={error}
                                 buttonText="Go back"
@@ -139,7 +139,7 @@ const Contact = () => {
                         preloadedValues={enteredData ? enteredData : ''}
                     />
                 ) : (
-                    <div className="my-10">
+                    <div className="form-wrapper">
                         <p className="loader-container success-message">
                             Message sent!
                         </p>
