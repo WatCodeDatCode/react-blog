@@ -6,9 +6,11 @@ const Contact = () => {
     const [loading, setLoading] = useState(false)
     const [error, setError] = useState(false)
     const [success, setSuccess] = useState(false)
+    const [enteredData, setEnteredData] = useState('');
 
-    const onSubmit = async () => {
+    const onSubmit = async (data) => {
         const form = document.querySelector('#contact-form')
+        setEnteredData(data)
         setLoading(true)
 
         await emailjs
@@ -21,6 +23,7 @@ const Contact = () => {
             .then(
                 (result) => {
                     console.log(result.text)
+                    setEnteredData('')
                     setSuccess(true)
                 },
                 (error) => {
@@ -54,7 +57,7 @@ const Contact = () => {
                         </div>
                     )
                 ) : !success ? (
-                    <ContactForm onSubmit={onSubmit} />
+                    <ContactForm onSubmit={onSubmit} preloadedValues={enteredData ? enteredData : ''}/>
                 ) : (
                     <div className="my-10">
                         <p className="loader-container text-green-500 font-nationalPark text-3xl font-bold">Message sent!</p>

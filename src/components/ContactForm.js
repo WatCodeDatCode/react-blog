@@ -1,8 +1,9 @@
 import React from 'react'
 import { useForm } from 'react-hook-form'
 
-const ContactForm = ({ onSubmit }) => {
+const ContactForm = ({ onSubmit, preloadedValues }) => {
     const { register, handleSubmit, errors } = useForm({
+        defaultValues: preloadedValues,
         criteriaMode: 'all',
         mode: 'onChange',
     })
