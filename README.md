@@ -2,7 +2,7 @@
 ## Table of contents
 * [General information](#general-information)
 * [Features](#features)
-* [Planned](#planned)
+* [Future plans](#future-plans)
 * [Technologies](#technologies)
 
 ## General information
@@ -20,7 +20,7 @@ This travel blog with react is a final project for the _Full-Stack Web Developme
 * If logged in, blogs can be edited using a prefilled form. Blogs can also be deleted.
 * On the contact page a form can be submitted which sends an email using [emailjs](https://www.emailjs.com/). 
 
-## Future ideas
+## Future plans
 * Add sign-up section to register new users.
 * Allow editing of user profiles. 
 * Profiles can upload images which will then automatically be taken (along with user name) for blog posts. 
