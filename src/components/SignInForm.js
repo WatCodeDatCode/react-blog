@@ -22,7 +22,6 @@ const SignInForm = () => {
             })
             .then(
                 (response) => {
-                    const data = response.data
                     const { token } = response.data
                     handleLogin(token)
                 },
