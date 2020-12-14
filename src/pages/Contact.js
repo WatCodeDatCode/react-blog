@@ -42,7 +42,7 @@ const Contact = () => {
         <>
             <div className="form-page-container">
                 <h2 className="page-header">Contact</h2>
-                <div className="flex h-auto justify-center mx-6 mb-8 pt-2 w-full relative md:w-2/3 xl:w-2/4">
+                <div className="contact-image-container">
                     <img
                         className="blog-image"
                         src="/images/andrew-contact.jpg"
@@ -50,9 +50,7 @@ const Contact = () => {
                     />
                     <div className="image-overlay">
                         <div className="contact-image-text">
-                            <h3 className="image-contact-info">
-                                Email
-                            </h3>
+                            <h3 className="image-contact-info">Email</h3>
                             <p className="image-contact-details">
                                 arussell742<span className="mx-1">@</span>
                                 gmail.com
