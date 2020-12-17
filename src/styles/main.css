@@ -534,9 +534,17 @@ video {
   border-width: 0;
 }
 
+.bg-fixed {
+  background-attachment: fixed;
+}
+
 .hover\:bg-dark-800:hover {
   --tw-bg-opacity: 1;
   background-color: rgba(16, 18, 21, var(--tw-bg-opacity));
+}
+
+.bg-cover {
+  background-size: cover;
 }
 
 .rounded-md {
@@ -662,10 +670,6 @@ video {
 
 .p-2 {
   padding: 0.5rem;
-}
-
-.fixed {
-  position: fixed;
 }
 
 .absolute {

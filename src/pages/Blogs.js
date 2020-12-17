@@ -170,10 +170,8 @@ const Blogs = () => {
           <div
             style={{
               backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('/images/places/dimmuborgir.jpg')`,
-              backgroundRepeat: 'no-repeat',
-              height: '100%',
-              backgroundAttachment: 'fixed'
             }}
+            className="bg-fixed bg-cover"
           >
             <div className='blog-grid-container'>
               <div>
