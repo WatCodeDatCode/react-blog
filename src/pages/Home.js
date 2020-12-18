@@ -13,7 +13,7 @@ const Home = () => {
         <div className='hero-text'>
           <h1 className='hero-text-header'>
             Gullible's Travels{' '}
-            <span className='hero-header-span'>Adventure Starts Here</span>
+            <span className='hero-header-span'>Totally Real Travel</span>
           </h1>
           <div className='hero-cta-container'>
             <NavLink className='cta-hero' to='/blog'>
