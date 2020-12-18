@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ContactForm, LoginError, LoadingSpinner } from '../componentExports';
+import { ContactForm, ContactFormError, LoadingSpinner } from '../componentExports';
 import emailjs from 'emailjs-com';
 
 const Contact = () => {
@@ -118,7 +118,7 @@ const Contact = () => {
             </div>
           ) : (
             <div className='form-wrapper'>
-              <LoginError
+              <ContactFormError
                 error={error}
                 buttonText='Go back'
                 onClick={handleRemoveErrorButton}

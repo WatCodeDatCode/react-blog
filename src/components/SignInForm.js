@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react';
 import axios from 'axios';
-import { LoadingSpinner, LoginError, AuthContext } from '../componentExports';
+import { LoadingSpinner, AuthContext } from '../componentExports';
 
 const SignInForm = () => {
   const { handleLogin } = useContext(AuthContext);
@@ -27,35 +27,21 @@ const SignInForm = () => {
         },
         (err) => {
           console.error(err);
-          setInputs({});
           setError('Invalid login.');
         }
       );
     setLoading(false);
   };
 
-  const handleRemoveErrorButton = () => {
-    setError(false);
-  };
-
   return (
     <>
-      {loading || error ? (
-        loading ? (
+      {loading ? (
           <div className='m-8'>
             <LoadingSpinner />
           </div>
-        ) : (
-          <div className='my-6'>
-            <LoginError
-              error={error}
-              buttonText='Go back'
-              onClick={handleRemoveErrorButton}
-            />
-          </div>
-        )
       ) : (
         <form className='mx-2 my-2' onSubmit={handleSubmit}>
+          {error && <p className=" login-error-text">{error}</p>}
           <input
             className='login-input'
             key='email'

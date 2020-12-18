@@ -389,6 +389,10 @@ body {
     @apply text-center font-nationalPark text-2xl md:text-4xl m-4 md:m-8;
 }
 
+.login-error-text {
+    @apply mb-2 text-center text-xl text-red-500;
+}
+
 .error-image {
     @apply h-50vh lg:h-50vh w-auto;
 }

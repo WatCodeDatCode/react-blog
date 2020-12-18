@@ -8,7 +8,7 @@ export { default as Footer } from './components/Footer';
 export { default as Form } from './components/Form';
 export { default as FormCountryOptions } from './components/FormCountryOptions';
 export { default as LoadingSpinner } from './components/LoadingSpinner';
-export { default as LoginError } from './components/LoginError';
+export { default as ContactFormError } from './components/ContactFormError';
 export { default as MenuItems } from './components/MenuItems';
 export { default as Navbar } from './components/Navbar';
 export { default as MobileMenu } from './components/MobileMenu';

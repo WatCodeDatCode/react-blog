@@ -1,6 +1,6 @@
 import React from 'react';
 
-const LoginError = ({ error, buttonText, onClick }) => {
+const ContactFormError = ({ error, buttonText, onClick }) => {
   return (
     <div className='login-error-container'>
       <p className='error-text'>{error}</p>
@@ -11,4 +11,4 @@ const LoginError = ({ error, buttonText, onClick }) => {
   );
 };
 
-export default LoginError;
+export default ContactFormError;
