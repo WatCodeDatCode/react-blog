@@ -1609,12 +1609,12 @@ video {
   }
 }
 
-.blog-image {
+.header-image {
   border-radius: 0.5rem;
   display: block;
   margin-left: auto;
   margin-right: auto;
-  max-width: 100%;
+  width: 100%;
 }
 
 .back-arrow-container {

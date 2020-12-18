@@ -181,8 +181,8 @@
     @apply flex h-auto justify-center mx-6 mb-8 w-full relative md:w-2/3 xl:w-2/4;
 }
 
-.blog-image {
-    @apply max-w-full rounded-lg block mx-auto;
+.header-image {
+    @apply w-full rounded-lg block mx-auto;
 }
 
 .back-arrow-container {

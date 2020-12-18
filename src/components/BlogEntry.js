@@ -21,9 +21,9 @@ const BlogEntry = ({ entry }) => {
 
   return (
     <div className='flexwrap-container'>
-      <div className='blog-image-container'>
+      <div className='header-image-container'>
         <img
-          className='blog-image'
+          className='header-image'
           src={entry.place_img}
           alt={`${entry.city}, ${entry.country}`}
         />
