@@ -44,7 +44,7 @@ const Contact = () => {
         <h2 className='page-header'>Contact</h2>
         <div className='contact-image-container'>
           <img
-            className='header-image'
+            className='contact-image'
             src='/images/andrew-contact.jpg'
             alt='Contact Andrew Russell'
           />
